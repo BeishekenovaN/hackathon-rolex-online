@@ -1,11 +1,11 @@
 import { Paper, Typography } from '@mui/material';
 import React, { useContext, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { productsContext } from '../../Context/ProductsContext';
+import { productContext } from '../../../Contexts/ProductsContext';
 
 const ProductDetail = () => {
     const {id} = useParams()
-    const { detail, getDetail } = useContext(productsContext)
+    const { detail, getDetail } = useContext(productContext)
 
     useEffect(() => {
         getDetail(id)

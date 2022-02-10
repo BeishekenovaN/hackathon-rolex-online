@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useContext } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { productsContext } from '../Context/ProductsContext';
+import { productContext } from '../../../Contexts/ProductsContext';
 import { styled } from '@mui/material/styles'
 import {Box, Grid, Paper, FormControl, FormLabel, RadioGroup,    FormControlLabel, Radio, Slider, Button 
 } from '@mui/material'
@@ -17,7 +17,7 @@ const Item = styled(Paper)(({ theme }) => ({
 const SideBar = () => {
     const search = new URLSearchParams(window.location.search)
     const navigate = useNavigate()
-    const { getProducts } = useContext(productsContext)
+    const { getProducts } = useContext(productContext)
     const [type, setType] = useState(search.get('type') || '') 
     const [price, setPrice] = useState(search.get('price_lte') || 0)
     
