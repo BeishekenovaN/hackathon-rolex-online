@@ -1,4 +1,9 @@
 import * as React from 'react';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import { TextField } from '@mui/material';
+import { Button } from '@mui/material';
+import { productContext } from '../../../Contexts/ProductsContext';
 import { useNavigate } from 'react-router-dom';
 
 const AddProduct = () => {
@@ -10,8 +15,16 @@ const AddProduct = () => {
         description: '',
     })
 
-    const { addProduct } = useContext(productContext)
+    const { addProduct } = React.useContext(productContext)
     const navigate = useNavigate()
+
+    const handleInp = (e) => {
+      let obj = {
+          ...values,
+          [e.target.name]: e.target.value
+      }
+      setValues(obj)
+  }
 
     const handleSave = () => {
         if(!values.image) values.image = ''

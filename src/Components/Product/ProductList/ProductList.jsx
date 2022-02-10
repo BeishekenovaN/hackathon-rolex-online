@@ -2,11 +2,11 @@ import { getOptionGroupUnstyledUtilityClass } from '@mui/base';
 import { Box, Button, Grid, Pagination, Stack } from '@mui/material';
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate, useSearchParams, Link} from 'react-router-dom';
-import { productsContext } from '../../Context/ProductsContext';
+import { productContext } from '../../../Contexts/ProductsContext';
 import ProductCard from '../ProductCard/ProductCard';
 
 const ProductList = () => {
-    const { products, getProducts, paginatedPages } = useContext(productsContext)
+    const { products, getProducts, paginatedPages } = useContext(productContext)
     const search = new URLSearchParams(window.location.search)
     const [searchParams, setSearchParams] = useSearchParams()
     const [limit, setLimit] = useState(3)
