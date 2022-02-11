@@ -1,5 +1,12 @@
 {
-    "products": [
-        
-    ]
+  "products": [
+    {
+      "title": "ROLEX",
+      "image": "https://content.rolex.com/dam/2021/upright-bba-with-shadow/m128238-0008.png?impolicy=v6-upright&imwidth=270",
+      "price": 20000,
+      "type": "M",
+      "description": "Gold",
+      "id": 1
+    }
+  ]
 }

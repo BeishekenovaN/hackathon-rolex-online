@@ -1,132 +1,126 @@
 import * as React from 'react';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { useNavigate } from 'react-router-dom';
+import { styled } from '@mui/material/styles';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell, { tableCellClasses } from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
 import { productContext } from '../../Contexts/ProductsContext';
+import { calcTotalPrice } from '../Helpers/CalcPrice';
+import { Button, Typography } from '@mui/material';
 
-function Copyright(props) {
+const StyledTableCell = styled(TableCell)(({ theme }) => ({
+  [`&.${tableCellClasses.head}`]: {
+    backgroundColor: theme.palette.common.black,
+    color: theme.palette.common.white,
+  },
+  [`&.${tableCellClasses.body}`]: {
+    fontSize: 14,
+  },
+}));
+
+const StyledTableRow = styled(TableRow)(({ theme }) => ({
+  '&:nth-of-type(odd)': {
+    backgroundColor: theme.palette.action.hover,
+  },
+  // hide last border
+  '&:last-child td, &:last-child th': {
+    border: 0,
+  },
+}));
+
+
+export default function Cart() {
+    const {cart, getCart, changeProductCount} = React.useContext(productContext)
+    React.useEffect(() =>{
+        getCart()
+    }, [])
+
+
+    
   return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
+    <TableContainer component={Paper}>
+      <Table sx={{ minWidth: 700 }} aria-label="customized table">
+        <TableHead>
+          <TableRow>
+            <StyledTableCell>Image</StyledTableCell>
+            <StyledTableCell align="right">Title</StyledTableCell>
+            <StyledTableCell align="right">Price(g)</StyledTableCell>
+            <StyledTableCell align="right">Count(g)</StyledTableCell>
+            <StyledTableCell align="right">SubPrice(g)</StyledTableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+            {cart.products ? (
+                <>
+                    {cart.products.map((elem) =>(
+                        <StyledTableRow key={elem.item.id}>
+                            <StyledTableCell component='th' scope='row'>
+                                <img width='60' src={elem.item.image}/>
+                            </StyledTableCell>
+                            <StyledTableCell align='right'>
+                                {elem.item.title}
+                            </StyledTableCell>
+                            <StyledTableCell align='right'>
+                                {elem.item.price}
+                            </StyledTableCell>
+                            <StyledTableCell align='right'>
+                                <input type='number'
+                                    value={elem.count}
+                                    onChange={(e) => changeProductCount(e.target.value, elem.item.id)}
+                                />
+                            </StyledTableCell>
+                            <StyledTableCell align='right'>
+                                {elem.subPrice}
+                            </StyledTableCell>
+                            
+                        </StyledTableRow>
+                    ))}
+                </>
+            ): (null)}
+            <TableRow>
+                <TableCell rowSpan={3}/>
+                <TableCell colSpan={2}>
+                    <Typography variant='h4'>
+                        Total
+                    </Typography>
+                </TableCell>
+                
+                {
+                    cart.products ? (
+                        <TableCell align='right'>
+                            <Typography variant='h5'>{calcTotalPrice(cart.products)}</Typography>
+                        </TableCell>
+                    ): (null)
+                }
+
+            </TableRow>
+            <TableRow>
+                <TableCell colSpan={3} align='right'>
+                    <Button variant='contained' color='success'>
+                        Buy
+                    </Button>
+                </TableCell>
+            </TableRow>
+        </TableBody>
+      </Table>
+    </TableContainer>
   );
 }
 
-const theme = createTheme();
-
-export default function Login() {
-
-    const { signIn } = React.useContext(productContext)
-    const navigate = useNavigate()
 
 
 
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    // eslint-disable-next-line no-console
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-    handleSignIn(data.get('email'), data.get('password'))
-    navigate('/')
-  };
-
-  async function handleSignIn(email, password){
-      try {
-          await signIn(email, password)
-      } catch(error){
-          console.log(error);
-      }
-  }
-
-
-
-  return (
-    <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs">
-        <CssBaseline />
-        <Box
-          sx={{
-            marginTop: 8,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}
-        >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            Sign in
-          </Typography>
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
-              autoFocus
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-            />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            />
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-            >
-              Sign In
-            </Button>
-            <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
-                </Link>
-              </Grid>
-              <Grid item>
-                <Link href="#" variant="body2">
-                  {"Don't have an account? Sign Up"}
-                </Link>
-              </Grid>
-            </Grid>
-          </Box>
-        </Box>
-        <Copyright sx={{ mt: 8, mb: 4 }} />
-      </Container>
-    </ThemeProvider>
-  );
-}
+ {/* {rows.map((row) => (
+            <StyledTableRow key={row.name}>
+              <StyledTableCell component="th" scope="row">
+                {row.name}
+              </StyledTableCell>
+              <StyledTableCell align="right">{row.calories}</StyledTableCell>
+              <StyledTableCell align="right">{row.fat}</StyledTableCell>
+              <StyledTableCell align="right">{row.carbs}</StyledTableCell>
+              <StyledTableCell align="right">{row.protein}</StyledTableCell>
+            </StyledTableRow>
+          ))} */}
