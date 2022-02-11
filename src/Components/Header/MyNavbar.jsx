@@ -140,12 +140,12 @@ export default function MyNavbar() {
       onClose={handleMenuClose}
     >
         
-      <Link  style={{textDecoration: 'none'}} to='/login'>
-      <MenuItem disabled={currentUser} onClick={handleMenuClose}>Login</MenuItem>
+      <Link  style={{textDecoration: 'none'}} to={!currentUser ? '/login' : '#' }>
+      <MenuItem disabled={currentUser ? true : false}  onClick={handleMenuClose}>Login</MenuItem>
       </Link>
         
-      <Link style={{textDecoration: 'none'}} to='/register'>
-      <MenuItem disabled={currentUser} onClick={handleMenuClose}>Register</MenuItem>
+      <Link style={{textDecoration: 'none'}} to={!currentUser ? '/register' : '#'}>
+      <MenuItem  disabled={currentUser ? true : false} onClick={handleMenuClose}>Register</MenuItem>
       </Link>
     </Menu>
   );
