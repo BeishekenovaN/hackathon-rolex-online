@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { createContext, useEffect, useReducer, useState } from 'react';
-import { API } from '../Helpers/Constants'
+import { API, API_PRODUCTS, API_WATCH } from '../Helpers/Constants'
 import { calcSubPrice, calcTotalPrice } from '../Helpers/CalcPrice'
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth';
 import { auth } from '../Firebass';
@@ -8,6 +8,7 @@ export const productContext = createContext()
 
 const INIT_STATE = {
     products: null,
+    watch: null, 
     edit: null,
     cart: {},
     cartLength: 0,
@@ -26,7 +27,7 @@ const reducer = (state = INIT_STATE, action) => {
         case "CHANGE_CART_COUNT":
             return{...state, cartLength: action.payload}
         case "GET_CART":
-            return{...state, cart: action.payload}
+            return{...state, cart: action.payload}  
         case "GET_DETAIL_PRODUCT":
             return{...state, detail: action.payload}
         default: 
@@ -38,7 +39,12 @@ const ProductsContextProvider = ({children}) => {
     // ! CREATE 
     const addProduct = async (newProduct) =>  {
         try {
-            await axios.post(API, newProduct)
+            if(newProduct.flag === 'watch'){
+                await axios.post(API_WATCH, newProduct)
+
+            }else{
+                await axios.post(API_PRODUCTS, newProduct)
+            }
             getProducts()
         } catch (error) {
             alert(error)
@@ -49,7 +55,7 @@ const ProductsContextProvider = ({children}) => {
     // ! READ
     const getProducts = async () => {
         try {
-            let res = await axios.get(`${API}${window.location.search}`)
+            let res = await axios.get(`${API_PRODUCTS}${window.location.search}`)
             let action = {
                 type: "GET_PRODUCTS",
                 payload: res
@@ -60,6 +66,11 @@ const ProductsContextProvider = ({children}) => {
             alert(error)
         }
     }
+
+    const getWatch = async () => {
+        let res = await axios.get(`${API_WATCH}${window.location.search}`)
+    }
+
      //! DELETE 
      const deleteProduct = async (id) => {
         await axios.delete(`${API}/${id}`)

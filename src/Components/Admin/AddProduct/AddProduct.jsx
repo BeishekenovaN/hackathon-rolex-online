@@ -13,6 +13,7 @@ const AddProduct = () => {
         price: '',
         type: '',
         description: '',
+        flag: 'watch' | 'products'
     })
 
     const { addProduct } = React.useContext(productContext)
