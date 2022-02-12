@@ -8,7 +8,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { productContext } from '../../Contexts/ProductsContext';
-import { calcTotalPrice } from '../Helpers/CalcPrice';
+import { calcTotalPrice } from '../../Helpers/CalcPrice';
 import { Button, Typography } from '@mui/material';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -33,13 +33,11 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 
 export default function Cart() {
-    const {cart, getCart, changeProductCount} = React.useContext(productContext)
-    React.useEffect(() =>{
-        getCart()
+    const { cart, getCart, changeProductCount } = React.useContext(productContext)
+    // console.log(cart, 'helo')
+    React.useEffect(() => {
+        getCart() 
     }, [])
-
-
-    
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
@@ -47,55 +45,52 @@ export default function Cart() {
           <TableRow>
             <StyledTableCell>Image</StyledTableCell>
             <StyledTableCell align="right">Title</StyledTableCell>
-            <StyledTableCell align="right">Price(g)</StyledTableCell>
-            <StyledTableCell align="right">Count(g)</StyledTableCell>
-            <StyledTableCell align="right">SubPrice(g)</StyledTableCell>
+            <StyledTableCell align="right">Price</StyledTableCell>
+            <StyledTableCell align="right">Count</StyledTableCell>
+            <StyledTableCell align="right">SubPrice</StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
             {cart.products ? (
                 <>
-                    {cart.products.map((elem) =>(
-                        <StyledTableRow key={elem.item.id}>
-                            <StyledTableCell component='th' scope='row'>
-                                <img width='60' src={elem.item.image}/>
-                            </StyledTableCell>
-                            <StyledTableCell align='right'>
-                                {elem.item.title}
-                            </StyledTableCell>
-                            <StyledTableCell align='right'>
-                                {elem.item.price}
-                            </StyledTableCell>
-                            <StyledTableCell align='right'>
-                                <input type='number'
-                                    value={elem.count}
-                                    onChange={(e) => changeProductCount(e.target.value, elem.item.id)}
-                                />
-                            </StyledTableCell>
-                            <StyledTableCell align='right'>
-                                {elem.subPrice}
-                            </StyledTableCell>
-                            
-                        </StyledTableRow>
-                    ))}
+                {cart.products.map((elem) => (
+                   <StyledTableRow key={elem.item.id}>
+                        <StyledTableCell component='th' scope='row'>
+                            <img width="60" src={elem.item.image} />
+                        </StyledTableCell>
+                        <StyledTableCell align='right'>
+                            {elem.item.title}
+                        </StyledTableCell>
+                        <StyledTableCell align='right'>
+                            {elem.item.price}
+                        </StyledTableCell>
+                        <StyledTableCell align='right'>
+                            <input 
+                                type='number'
+                                value={elem.count}
+                                onChange={(e) => changeProductCount(e.target.value, elem.item.id)}
+                            />
+                        </StyledTableCell>
+                        <StyledTableCell align='right'>
+                            {elem.item.subPrice}
+                        </StyledTableCell>
+                   </StyledTableRow> 
+                ))}
                 </>
-            ): (null)}
+            ) : (null)} 
             <TableRow>
                 <TableCell rowSpan={3}/>
                 <TableCell colSpan={2}>
-                    <Typography variant='h4'>
-                        Total
-                    </Typography>
+                    <Typography variant='h4'>Total:</Typography>
                 </TableCell>
-                
-                {
-                    cart.products ? (
-                        <TableCell align='right'>
-                            <Typography variant='h5'>{calcTotalPrice(cart.products)}</Typography>
-                        </TableCell>
-                    ): (null)
-                }
-
+                    {
+                        cart.products ? (
+                            <TableCell align='right'>
+                                <Typography variant='h5'>{calcTotalPrice(cart.products)}</Typography>
+                            </TableCell>
+                        ) : (null)
+                    }
+            
             </TableRow>
             <TableRow>
                 <TableCell colSpan={3} align='right'>
@@ -110,17 +105,3 @@ export default function Cart() {
   );
 }
 
-
-
-
- {/* {rows.map((row) => (
-            <StyledTableRow key={row.name}>
-              <StyledTableCell component="th" scope="row">
-                {row.name}
-              </StyledTableCell>
-              <StyledTableCell align="right">{row.calories}</StyledTableCell>
-              <StyledTableCell align="right">{row.fat}</StyledTableCell>
-              <StyledTableCell align="right">{row.carbs}</StyledTableCell>
-              <StyledTableCell align="right">{row.protein}</StyledTableCell>
-            </StyledTableRow>
-          ))} */}

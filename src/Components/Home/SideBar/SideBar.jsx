@@ -68,14 +68,14 @@ const SideBar = () => {
                                 onChange={(e) => handleChangeType("type", e.target.value)}
                             >
                                 <FormControlLabel 
-                                    value='appartments'
+                                    value='cars'
                                     control={<Radio/>}
-                                    label='Appartments'
+                                    label='cars'
                                 />
                                 <FormControlLabel
-                                    value='villa'
+                                    value='bikes'
                                     control={<Radio/>}
-                                    label='Villa'
+                                    label='bikes'
                                 />
                             </RadioGroup>
                         </FormControl>
