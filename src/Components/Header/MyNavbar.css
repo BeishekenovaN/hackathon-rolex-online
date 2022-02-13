@@ -2,6 +2,26 @@
     width: auto;
     height: auto;
     object-fit: cover;
-    position: absolute;
+    position: fixed;
     z-index: -1;
+    top: 0;
+}
+.bgLogin{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
+    top: 0;
+}
+.logo  { 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+} 
+.AppBar {
+    height: 50;
+
 }
