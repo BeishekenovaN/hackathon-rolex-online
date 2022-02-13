@@ -13,7 +13,6 @@ const AddProduct = () => {
         price: '',
         type: '',
         description: '',
-        flag: 'watch' || 'products'
     })
 
     const { addProduct } = React.useContext(productContext)
@@ -69,7 +68,6 @@ const AddProduct = () => {
                     <TextField style={{padding: '10px'}} name='price' onChange={handleInp} value={values.price} variant='outlined' label='Price'/>
                     <TextField style={{padding: '10px'}} name='type' onChange={handleInp} value={values.type} variant='outlined' label='Type'/>
                     <TextField style={{padding: '10px'}} name='description' onChange={handleInp} value={values.description} variant='outlined' label='Description'/>
-                    <TextField style={{padding: '10px'}} name='flag' onChange={handleInp} value={values.flag} variant='outlined' label='Description'/>
                 </form>
                 <Button onClick={handleSave} variant="contained" color='warning'>Добавить</Button>
             </div>

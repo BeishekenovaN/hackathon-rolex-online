@@ -49,7 +49,7 @@ export default function ProductCard({item}) {
 
 
     return (
-        <Card sx={{ maxWidth: 420 }}>
+        <Card sx={{ maxWidth: 320 }}>
         <Link to={`/detail/${item.id}`} style={{textDecoration: 'none', color: 'black'}}> 
         <CardMedia
           component="img"

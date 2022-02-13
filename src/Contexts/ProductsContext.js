@@ -1,30 +1,26 @@
 import axios from 'axios';
 import React, { createContext, useEffect, useReducer, useState } from 'react';
-import { API_PRODUCTS, API_WATCH } from '../Helpers/Constants'
 import { calcSubPrice, calcTotalPrice } from '../Helpers/CalcPrice'
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth';
 import { auth } from '../Firebass';
+import { API } from '../Helpers/Constants';
+
 export const productContext = createContext()
 
 const INIT_STATE = {
     products: null,
-    watch: null, 
     edit: null,
     cart: {},
     cartLength: 0,
     paginatedPages: 1,
-    detail: {},
-    
+    detail: {},    
 }
-console.log(INIT_STATE, 'test')
 
 const reducer = (state = INIT_STATE, action) => {
     switch(action.type){
         case "GET_PRODUCTS":
             return {...state, products: action.payload.data, 
                 paginatedPages: Math.ceil(action.payload.headers["x-total-count"] / 3)}
-        case "GET_WATCH":
-            return {...state, watch: action.payload.data}
         case "GET_EDIT_PRODUCT":
             return{...state, edit: action.payload}
         case "CHANGE_CART_COUNT":
@@ -42,43 +38,24 @@ const ProductsContextProvider = ({children}) => {
     // ! CREATE 
     const addProduct = async (newProduct) =>  {
         try {
-            if(newProduct.flag === 'watch'){
-                await axios.post(API_WATCH, newProduct)
-                getWatch()
-            }else{
-                await axios.post(API_PRODUCTS, newProduct)
+                await axios.post(API, newProduct)
                 getProducts()
-            } 
-            
         } catch (error) {
             alert(error)
         }
     }
 
     
-    // ! READ
+    // ! READ   
     const getProducts = async () => {
         try {
-            let res = await axios.get(`${API_PRODUCTS}${window.location.search}`)
+            let res = await axios.get(`${API}${window.location.search}`)
             let action = {
                 type: "GET_PRODUCTS",
                 payload: res
             }
             dispatch(action)
-            console.log(res, 'test1');
-        } catch (error) {
-            alert(error)
-        }
-    }
-
-    const getWatch = async () => {
-        try {
-            let res = await axios.get(`${API_WATCH}${window.location.search}`)
-            let action = {
-                type: "GET_WATCH",
-                payload: res
-            }
-            dispatch(action)
+    
         } catch (error) {
             alert(error)
         }
@@ -86,7 +63,7 @@ const ProductsContextProvider = ({children}) => {
 
      //! DELETE 
      const deleteProduct = async (id) => {
-        await axios.delete(`${API_PRODUCTS}/${id}`)
+        await axios.delete(`${API}/${id}`)
         getProducts()
     }
 
@@ -95,7 +72,7 @@ const ProductsContextProvider = ({children}) => {
 
      const  editProduct = async (id) => {
         try {
-            let res = await axios(`${API_PRODUCTS}/${id}`)
+            let res = await axios(`${API}/${id}`)
             let action = {
                 type: "GET_EDIT_PRODUCT",
                 payload: res.data
@@ -109,7 +86,7 @@ const ProductsContextProvider = ({children}) => {
 
      const saveEditedProduct = async (updatedProduct) => {
         try {
-            await axios.patch(`${API_PRODUCTS}/${updatedProduct.id}`, updatedProduct)
+            await axios.patch(`${API}/${updatedProduct.id}`, updatedProduct)
             getProducts()
         }catch (error) {
             console.log(error);
@@ -212,7 +189,7 @@ const ProductsContextProvider = ({children}) => {
     //! GEt Detail
 
     const getDetail = async (id) => {
-        const res = await axios(`${API_PRODUCTS}/${id}`)
+        const res = await axios(`${API}/${id}`)
         let action = {
             type: "GET_DETAIL_PRODUCT",
             payload: res.data
@@ -246,7 +223,6 @@ const ProductsContextProvider = ({children}) => {
         <productContext.Provider value={{
             addProduct,
             getProducts,
-            getWatch,
             deleteProduct,
             editProduct,
             saveEditedProduct,
@@ -262,7 +238,6 @@ const ProductsContextProvider = ({children}) => {
             useAuth,
             edit: state.edit,
             products: state.products,
-            watch: state.watch,
             cartLength: state.cartLength,
             cart: state.cart,
             paginatedPages: state.paginatedPages,
