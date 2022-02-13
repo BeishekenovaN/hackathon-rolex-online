@@ -35,9 +35,7 @@ const ProductList = () => {
 
     return (
         <Box sx={{flexGrow: 1, margin: 4}}>
-            <Link to="/add" style={{textDecoration: 'none', marginBottom: '10px'}}>
-               <button>Add Contact</button>
-            </Link>
+            
             <Grid container spacing={{xs: 2, md: 3}} columns={{xs: 4, sm: 8, md: 12}}>
                 {
                     products ? (

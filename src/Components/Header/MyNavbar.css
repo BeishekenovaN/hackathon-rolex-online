@@ -1,0 +1,7 @@
+.bgNavbar {
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    position: absolute;
+    z-index: -1;
+}

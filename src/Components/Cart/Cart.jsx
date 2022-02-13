@@ -7,10 +7,9 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { Button, Typography } from '@mui/material';
-import { calcTotalPrice } from '../../Helpers/CalcPrice';
 import { productContext } from '../../Contexts/ProductsContext';
-
+import { calcTotalPrice } from '../../Helpers/CalcPrice';
+import { Button, Typography } from '@mui/material';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {

@@ -19,6 +19,8 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Link, useSearchParams } from 'react-router-dom';
 import { productContext } from '../../Contexts/ProductsContext';
 import { Button } from '@mui/material';
+import Video from '../Image/homepage_cosmograph_daytona_m116503-0004_0001.mp4'
+import './MyNavbar.css'
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -166,6 +168,7 @@ export default function MyNavbar() {
       }}
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
+    
     >
         <Link to='/cart' style={{color: 'white'}}>
         <IconButton color="inherit">
@@ -190,10 +193,18 @@ export default function MyNavbar() {
     </Menu>
   );
 
+  const stylesVideo = {
+    paperContainer: {
+      backgroundImage: `url(${Image})`
+    }
+  }
+
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-        <Toolbar>
+
+    <Box sx={{ flexGrow: 1}}>
+      <AppBar position="static" sx={{backgroundColor: 'transparent' }} >
+           
+        <Toolbar>  
           <IconButton
             size="large"
             edge="start"
@@ -242,6 +253,9 @@ export default function MyNavbar() {
           ) : null
         }
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+            <Link to="/add" style={{textDecoration: 'none', marginBottom: '10px'}}>
+               <button>Add Contact</button>
+            </Link>
            <Link to='/cart'>
                 <IconButton>
                     <Badge badgeContent={cartLength} color='secondary'>
@@ -273,10 +287,18 @@ export default function MyNavbar() {
               <MoreIcon />
             </IconButton>
           </Box>
+          
         </Toolbar>
+        <div className='bgNavbar'>
+          <video autoPlay loop>
+              <source src={Video} type='video/mp4'/>
+            </video>
+          </div>
       </AppBar>
       {renderMobileMenu}
       {renderMenu}
+      
+      
     </Box>
   );
 }

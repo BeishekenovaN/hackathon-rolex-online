@@ -1,28 +1,27 @@
 import axios from 'axios';
 import React, { createContext, useEffect, useReducer, useState } from 'react';
-import { API, API_PRODUCTS, API_WATCH } from '../Helpers/Constants'
 import { calcSubPrice, calcTotalPrice } from '../Helpers/CalcPrice'
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth';
 import { auth } from '../Firebass';
+import { API } from '../Helpers/Constants';
+
 export const productContext = createContext()
 
 const INIT_STATE = {
     products: null,
-    watch: null, 
     edit: null,
     cart: {},
     cartLength: 0,
     paginatedPages: 1,
-    detail: {}
+    detail: {},    
 }
 
 const reducer = (state = INIT_STATE, action) => {
     switch(action.type){
         case "GET_PRODUCTS":
             return {...state, products: action.payload.data, 
-                paginatedPages: Math.ceil(action.payload.headers["x-total-count"] / 3)
-    }
-    case "GET_EDIT_PRODUCT":
+                paginatedPages: Math.ceil(action.payload.headers["x-total-count"] / 3)}
+        case "GET_EDIT_PRODUCT":
             return{...state, edit: action.payload}
         case "CHANGE_CART_COUNT":
             return{...state, cartLength: action.payload}
@@ -39,36 +38,27 @@ const ProductsContextProvider = ({children}) => {
     // ! CREATE 
     const addProduct = async (newProduct) =>  {
         try {
-            if(newProduct.flag === 'watch'){
-                await axios.post(API_WATCH, newProduct)
-
-            }else{
-                await axios.post(API_PRODUCTS, newProduct)
-            }
-            getProducts()
+                await axios.post(API, newProduct)
+                getProducts()
         } catch (error) {
             alert(error)
         }
     }
 
     
-    // ! READ
+    // ! READ   
     const getProducts = async () => {
         try {
-            let res = await axios.get(`${API_PRODUCTS}${window.location.search}`)
+            let res = await axios.get(`${API}${window.location.search}`)
             let action = {
                 type: "GET_PRODUCTS",
                 payload: res
             }
-            // console.log(res, 'res')
             dispatch(action)
+    
         } catch (error) {
             alert(error)
         }
-    }
-
-    const getWatch = async () => {
-        let res = await axios.get(`${API_WATCH}${window.location.search}`)
     }
 
      //! DELETE 
