@@ -9,7 +9,8 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { productContext } from '../../Contexts/ProductsContext';
 import { calcTotalPrice } from '../../Helpers/CalcPrice';
-import { Button, Typography } from '@mui/material';
+import { Box, Button, Typography } from '@mui/material';
+import BackgroundDefault from '../Image/BackgroundDefault/BackgroundDefault';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -101,6 +102,7 @@ export default function Cart() {
             </TableRow>
         </TableBody>
       </Table>
+      <BackgroundDefault />
     </TableContainer>
   );
 }
