@@ -211,8 +211,7 @@ export default function MyNavbar() {
   return (
 
     <Box sx={{ flexGrow: 1}}>
-      <AppBar position="static" sx={{backgroundColor: 'transparent' }}  >
-           
+      <AppBar position="static" sx={{backgroundColor: 'transparent' }}  >           
         <Toolbar>  
           <IconButton
             size="large"
@@ -259,10 +258,7 @@ export default function MyNavbar() {
             <Button variant='success' disabled={!currentUser} onClick={handleLogOut}>Log Out</Button>
           ) : null
         }
-
-         
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-      
            <Link to='/cart'>
                 <IconButton>
                     <Badge badgeContent={cartLength} color='secondary'>
@@ -305,15 +301,9 @@ export default function MyNavbar() {
            {/* <div className='bgNavbar' >
             <BackgroundVideo />
           </div> */}
-          
       </AppBar>
       {renderMobileMenu}
-      {renderMenu}
-
-      
-     
+      {renderMenu}     
     </Box>
-     
-     
   );
 }
