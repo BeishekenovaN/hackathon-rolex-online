@@ -49,26 +49,29 @@ export default function ProductCard({item}) {
           <Link to={`/detail/${item.id}`} style={{textDecoration: 'none', color: 'black'}}> 
           <CardMedia
             component="img"
-            height="405"
+            height="300"
             image={item.image}
             alt={item.title}
           />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
+            <Typography sx={{fontSize: '15px'}}>
               {item.title}
             </Typography>
+          
+          {currentUser?.email === "admin1@gmail.com" ? (         
           <Typography variant="body2" color="text.secondary">
             {item.description}
           </Typography>
-          </CardContent>
-         <CardContent>
+          ) : null
+          }
             <Typography>
                 ${item.price}
             </Typography>
+          {currentUser?.email === "admin1@gmail.com" ? ( 
             <Typography>
                 категория: {item.type}
             </Typography>
-        </CardContent>
+           ): null
+          }
         </Link>
         {icons}
       </Card>
