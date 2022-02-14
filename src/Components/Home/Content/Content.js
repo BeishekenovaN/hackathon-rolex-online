@@ -1,13 +1,11 @@
 import { Grid } from '@mui/material';
 import React from 'react';
-import ProductList from '../../Product/ProductList/ProductList';
+import BackgroundVideo from '../../Image/BackgroundVideo/BackgroundVideo';
 
 const Content = () => {
     return (
         <div>
-            <Grid>
-                <ProductList/>
-            </Grid>
+            <BackgroundVideo />
         </div>
     );
 };

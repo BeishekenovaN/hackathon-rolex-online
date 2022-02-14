@@ -14,6 +14,9 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { productContext } from '../../../Contexts/ProductsContext';
 import { useNavigate } from 'react-router-dom';
+import BackgroundDefault from '../../Image/BackgroundDefault/BackgroundDefault';
+import { borderRadius } from '@mui/system';
+
 
 function Copyright(props) {
   return (
@@ -61,15 +64,20 @@ export default function Login() {
 
 
   return (
+    
     <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs">
+      <Container component="main" maxWidth="xs">   
         <CssBaseline />
         <Box
           sx={{
             marginTop: 8,
+            padding: 8,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
+            background: 'white',
+            borderRadius: 8
+
           }}
         >
           <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
@@ -78,7 +86,7 @@ export default function Login() {
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+          <Box color='warning' component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
             <TextField
               margin="normal"
               required
@@ -127,6 +135,8 @@ export default function Login() {
         </Box>
         <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
+      <BackgroundDefault />
     </ThemeProvider>
+    
   );
 }

@@ -16,11 +16,15 @@ import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { productContext } from '../../Contexts/ProductsContext';
 import { Button } from '@mui/material';
-import Video from '../Image/homepage_cosmograph_daytona_m116503-0004_0001.mp4'
+// import Video from '../Image/homepage_cosmograph_daytona_m116503-0004_0001.mp4'
 import './MyNavbar.css'
+import  Logo from '../Image/logo/Logo'
+import BackgroundVideo from '../Image/BackgroundVideo/BackgroundVideo';
+
+
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -198,12 +202,16 @@ export default function MyNavbar() {
       backgroundImage: `url(${Image})`
     }
   }
+  const navigate = useNavigate()
 
+  const returnHomePage = () => {
+    navigate('/')
+  }
+  
   return (
 
     <Box sx={{ flexGrow: 1}}>
-      <AppBar position="static" sx={{backgroundColor: 'transparent' }} >
-           
+      <AppBar position="static" sx={{backgroundColor: 'transparent' }}  >           
         <Toolbar>  
           <IconButton
             size="large"
@@ -214,14 +222,7 @@ export default function MyNavbar() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ display: { xs: 'none', sm: 'block' } }}
-          >
-            Evening store
-          </Typography>
+
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
@@ -234,8 +235,13 @@ export default function MyNavbar() {
             />
           </Search>
 
+          
           <Box sx={{ flexGrow: 1 }} />
 
+          <div onClick={returnHomePage}  className='logo'>
+           <Logo />
+          </div>
+       
           {currentUser?.email === "admin1@gmail.com" ? (
             <Link to='/add'>
             <Button color='warning'>
@@ -253,9 +259,6 @@ export default function MyNavbar() {
           ) : null
         }
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <Link to="/add" style={{textDecoration: 'none', marginBottom: '10px'}}>
-               <button>Add Contact</button>
-            </Link>
            <Link to='/cart'>
                 <IconButton>
                     <Badge badgeContent={cartLength} color='secondary'>
@@ -289,16 +292,18 @@ export default function MyNavbar() {
           </Box>
           
         </Toolbar>
-        <div className='bgNavbar'>
+        {/* <div className='bgNavbar'>
           <video autoPlay loop>
               <source src={Video} type='video/mp4'/>
             </video>
-          </div>
+          </div> */}
+          
+           {/* <div className='bgNavbar' >
+            <BackgroundVideo />
+          </div> */}
       </AppBar>
       {renderMobileMenu}
-      {renderMenu}
-      
-      
+      {renderMenu}     
     </Box>
   );
 }

@@ -14,6 +14,7 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
 import { productContext } from '../../../Contexts/ProductsContext';
+import BackgroundDefault from '../../Image/BackgroundDefault/BackgroundDefault';
 
 function Copyright(props) {
   return (
@@ -65,9 +66,12 @@ export default function Register() {
         <Box
           sx={{
             marginTop: 8,
+            padding: 8,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
+            background: 'white',
+            borderRadius: 8
           }}
         >
           <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
@@ -146,6 +150,7 @@ export default function Register() {
         </Box>
         <Copyright sx={{ mt: 5 }} />
       </Container>
+      <BackgroundDefault />
     </ThemeProvider>
   );
 }
