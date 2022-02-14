@@ -2,6 +2,6 @@
     width: auto;
     height: auto;
     object-fit: cover;
-    position: absolute;
+    position: absolute; 
     z-index: -1;
-}
+} 
