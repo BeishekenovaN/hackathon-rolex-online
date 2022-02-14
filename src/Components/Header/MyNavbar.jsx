@@ -209,9 +209,8 @@ export default function MyNavbar() {
   }
   
   return (
-
-    <Box sx={{ flexGrow: 1}}>
-      <AppBar position="static" sx={{backgroundColor: 'transparent' }}  >           
+    <Box sx={{ flexGrow: 1, position: 'absolute', zIndex: 5, width: '100%'}}>
+      <AppBar position="static" sx={{ backgroundColor: 'transparent', boxShadow: 0, }}  >           
         <Toolbar>  
           <IconButton
             size="large"
