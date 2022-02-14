@@ -10,7 +10,7 @@ import { IconButton } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import { Link } from 'react-router-dom';
 import { ShoppingCart } from '@mui/icons-material';
-import SideBar from '../../Home/SideBar/SideBar'
+
 
 export default function ProductCard({item}) {
   const {deleteProduct, addToCart, checkProductInCart, useAuth} = React.useContext(productContext)
@@ -40,18 +40,16 @@ export default function ProductCard({item}) {
         >
           <ShoppingCart />
         </IconButton>
-
     </CardActions>
 )
 
     return (
         <>
-          <SideBar />
-          <Card sx={{ maxWidth: 320 }}>
+          <Card sx={{ maxWidth: 306 }}>
           <Link to={`/detail/${item.id}`} style={{textDecoration: 'none', color: 'black'}}> 
           <CardMedia
             component="img"
-            height="300"
+            height="405"
             image={item.image}
             alt={item.title}
           />
