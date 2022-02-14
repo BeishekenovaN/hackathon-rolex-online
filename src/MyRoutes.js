@@ -21,7 +21,7 @@ const MyRoutes = () => {
                     <Route path='/list' element={<ProductList/>}/>
                     <Route path='/add' element={<AddProduct/>} />
                     <Route path='/' element={<Home/>} />
-                    <Route path='/edit/:id' element={<EditProduct/>} />
+                    <Route path='list/edit/:id' element={<EditProduct/>} />
                     <Route path='/detail/:id' element={<ProductDetail/>} />
                     <Route path='/cart' element={<Cart/>} />
                     <Route path='/register' element={<Register/>} />

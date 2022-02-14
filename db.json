@@ -11,7 +11,7 @@
     {
       "title": "1",
       "image": "https://originalwatches.net/uploads/Tovar/1/86/08/small/zagruzhennoe_thumbnailImage_670x0_false.jpg",
-      "price": 3,
+      "price": "300",
       "type": "4",
       "description": "5",
       "id": 2
@@ -56,6 +56,5 @@
       "description": "5",
       "id": 7
     }
-
   ]
 }

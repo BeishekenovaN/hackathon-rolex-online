@@ -10,14 +10,11 @@ const ProductList = () => {
     const { products, getProducts, paginatedPages } = useContext(productContext)
     const search = new URLSearchParams(window.location.search)
     const [searchParams, setSearchParams] = useSearchParams()
-    const [limit, setLimit] = useState(3)
+    const [limit, setLimit] = useState(6)
     const [page, setPage] = useState(searchParams.get('_page') ? searchParams.get("_page") : 1)
     const navigate = useNavigate()
 
-    useEffect(() => {
-        getProducts()
-    }, [])
-
+   
 
     useEffect(() =>{
         setSearchParams({
@@ -25,6 +22,11 @@ const ProductList = () => {
             "_page": page
         })
     }, [limit, page])
+
+    useEffect(() => {
+        getProducts()
+    }, [])
+
 
     const handlePage = (e, pageVal) => {
         let newPath = `${window.location.pathname}?${search.toString()}`
