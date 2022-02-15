@@ -6,9 +6,9 @@ const BackgroundDefault = () => {
 
     return (
         // <div >
-        <video className='bgLogin' autoPlay loop>
+        <video className='bgLogin' autoPlay muted loop>
             <source src={Video} type='video/mp4'/>
-          </video>
+        </video>
         // </div>
     );
 };

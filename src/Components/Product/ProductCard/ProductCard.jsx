@@ -26,15 +26,12 @@ export default function ProductCard({item}) {
           </Link>
          ) : null
         } 
-
-
          {currentUser?.email === "admin1@gmail.com" ? (
                <IconButton onClick={() => deleteProduct(item.id)}>
                <DeleteIcon />
                </IconButton>
                 ) :null
             }
-
         <IconButton onClick={() => {
           addToCart(item)  
         }} 
@@ -42,30 +39,28 @@ export default function ProductCard({item}) {
         >
           <ShoppingCart />
         </IconButton>
-
     </CardActions>
 )
 
-
-
     return (
-        <Card sx={{ maxWidth: 320 }}>
-        <Link to={`/detail/${item.id}`} style={{textDecoration: 'none', color: 'black'}}> 
-        <CardMedia
-          component="img"
-          height="300"
-          image={item.image}
-          alt={item.title}
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            {item.title}
-          </Typography>
+        <>
+          <Card sx={{ maxWidth: 306 }}>
+          <Link to={`/detail/${item.id}`} style={{textDecoration: 'none', color: 'black'}}> 
+          <CardMedia
+            component="img"
+            height="405"
+            image={item.image}
+            alt={item.title}
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              {item.title}
+            </Typography>
           <Typography variant="body2" color="text.secondary">
             {item.description}
           </Typography>
-        </CardContent>
-        <CardContent>
+          </CardContent>
+         <CardContent>
             <Typography>
                 ${item.price}
             </Typography>
@@ -76,5 +71,6 @@ export default function ProductCard({item}) {
         </Link>
         {icons}
       </Card>
+        </>
   );
 }

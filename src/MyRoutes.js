@@ -5,11 +5,12 @@ import EditProduct from './Components/Admin/EditProduct/EditProduct';
 import Login from './Components/Auth/Login/Login';
 import Register from './Components/Auth/Register/Register';
 import Cart from './Components/Cart/Cart';
+import Cosmograph from './Components/Cosmograph/Cosmograph';
 import MyNavbar from './Components/Header/MyNavbar';
 import Home from './Components/Home/Home';
 import ProductDetail from './Components/Product/ProductDetail/ProductDetail';
+import ProductList from './Components/Product/ProductList/ProductList';
 import ProductsContextProvider from './Contexts/ProductsContext';
-import Video from './Components/Image/homepage_cosmograph_daytona_m116503-0004_0001.mp4'
 
 
 const MyRoutes = () => {
@@ -17,8 +18,8 @@ const MyRoutes = () => {
         <ProductsContextProvider>
             <BrowserRouter>
             <MyNavbar />
-           
                 <Routes>
+                    <Route path='/list' element={<ProductList/>}/>
                     <Route path='/add' element={<AddProduct/>} />
                     <Route path='/' element={<Home/>} />
                     <Route path='/edit/:id' element={<EditProduct/>} />
@@ -26,6 +27,8 @@ const MyRoutes = () => {
                     <Route path='/cart' element={<Cart/>} />
                     <Route path='/register' element={<Register/>} />
                     <Route path='/login' element={<Login/>} />
+                    <Route path='/cosmograph' element={<Cosmograph/>}/>
+                    
                 </Routes>
             </BrowserRouter>
         </ProductsContextProvider>
