@@ -1,6 +1,8 @@
 import { Grid } from '@mui/material';
 import React from 'react';
 import Content from './Content/Content';
+import Footer from './Footer/Footer';
+import InfoBlock from './InfoBlock/InfoBlock';
 import Slider from './Slider/Slider';
 
 const Home = () => {
@@ -10,6 +12,8 @@ const Home = () => {
                 <Content/>
             </Grid>
             <Slider />
+            <InfoBlock />
+            <Footer />
         </div>
     );
 };
