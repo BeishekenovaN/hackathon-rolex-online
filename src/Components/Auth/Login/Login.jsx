@@ -38,9 +38,6 @@ export default function Login() {
     const { signIn } = React.useContext(productContext)
     const navigate = useNavigate()
 
-
-
-
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -52,7 +49,6 @@ export default function Login() {
     handleSignIn(data.get('email'), data.get('password'))
     navigate('/')
   };
-
   async function handleSignIn(email, password){
       try {
           await signIn(email, password)
@@ -60,17 +56,13 @@ export default function Login() {
           console.log(error);
       }
   }
-
-
-
-  return (
-    
+  return (    
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">   
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 8,
+            marginTop: 12,
             padding: 8,
             display: 'flex',
             flexDirection: 'column',
@@ -136,7 +128,6 @@ export default function Login() {
         <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
       <BackgroundDefault />
-    </ThemeProvider>
-    
+    </ThemeProvider>   
   );
 }

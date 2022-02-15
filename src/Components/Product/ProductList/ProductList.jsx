@@ -14,10 +14,7 @@ const ProductList = () => {
     const [page, setPage] = useState(searchParams.get('_page') ? searchParams.get("_page") : 1)
     const navigate = useNavigate()
 
-    useEffect(() => {
-        getProducts()
-    }, [])
-
+   
 
     useEffect(() =>{
         setSearchParams({
@@ -25,6 +22,11 @@ const ProductList = () => {
             "_page": page
         })
     }, [limit, page])
+
+    useEffect(() => {
+        getProducts()
+    }, [])
+
 
     const handlePage = (e, pageVal) => {
         let newPath = `${window.location.pathname}?${search.toString()}`

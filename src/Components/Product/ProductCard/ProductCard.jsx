@@ -10,6 +10,7 @@ import { IconButton } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import { Link } from 'react-router-dom';
 import { ShoppingCart } from '@mui/icons-material';
+import './ProductCard.css'
 
 
 export default function ProductCard({item}) {
@@ -47,13 +48,13 @@ export default function ProductCard({item}) {
         <>
           <Card sx={{ maxWidth: 306 }}>
           <Link to={`/detail/${item.id}`} style={{textDecoration: 'none', color: 'black'}}> 
-          <CardMedia
+          <CardMedia className='imgHover'
             component="img"
             height="300"
             image={item.image}
             alt={item.title}
           />
-            <Typography sx={{fontSize: '15px'}}>
+            <Typography xs={{fontSize: '15px'}}>
               {item.title}
             </Typography>
           

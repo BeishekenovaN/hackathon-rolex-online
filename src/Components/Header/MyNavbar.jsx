@@ -4,7 +4,6 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import Badge from '@mui/material/Badge';
 import MenuItem from '@mui/material/MenuItem';
@@ -209,7 +208,7 @@ export default function MyNavbar() {
   }
   
   return (
-    <Box sx={{ flexGrow: 1, position: 'absolute', top: 0, zIndex: 50, width: '100%'}}>
+    <Box sx={{ flexGrow: 1, position: 'absolute',top: 0, zIndex: 5, width: '100%'}}>
       <AppBar position="static" sx={{ backgroundColor: 'transparent', boxShadow: 0, }}  >           
       {/* <AppBar position="static" sx={{ backgroundColor: 'transparent', boxShadow: 0, }}  >            */}
         <Toolbar>  

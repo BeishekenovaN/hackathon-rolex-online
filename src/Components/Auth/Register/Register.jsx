@@ -35,10 +35,6 @@ export default function Register() {
     const {signUp } = React.useContext(productContext)
     const navigate = useNavigate()
 
-
-
-
-
     const handleSubmit = (event) => {
      event.preventDefault();
      const data = new FormData(event.currentTarget);
@@ -65,7 +61,7 @@ export default function Register() {
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 8,
+            marginTop: 12,
             padding: 8,
             display: 'flex',
             flexDirection: 'column',
