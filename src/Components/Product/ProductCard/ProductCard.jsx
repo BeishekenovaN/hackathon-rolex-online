@@ -10,6 +10,7 @@ import { IconButton } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import { Link } from 'react-router-dom';
 import { ShoppingCart } from '@mui/icons-material';
+import './CardList.css'
 
 
 export default function ProductCard({item}) {
@@ -46,32 +47,40 @@ export default function ProductCard({item}) {
     return (
         <>
           <Card sx={{ maxWidth: 306 }}>
-          <Link to={`/detail/${item.id}`} style={{textDecoration: 'none', color: 'black'}}> 
-          <CardMedia
-            component="img"
-            height="405"
-            image={item.image}
-            alt={item.title}
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              {item.title}
-            </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {item.description}
-          </Typography>
-          </CardContent>
-         <CardContent>
-            <Typography>
-                ${item.price}
-            </Typography>
-            <Typography>
-                категория: {item.type}
-            </Typography>
-        </CardContent>
-        </Link>
-        {icons}
-      </Card>
+            <Link to={`/detail/${item.id}`} style={{textDecoration: 'none', color: 'black'}}> 
+            <div style={{height: '305px'}}>
+            <CardMedia
+              component="img"
+              height="300"
+              image={item.image}
+              alt={item.title}
+            />
+            </div>
+            <CardContent sx={{textAlign: 'center', padding: 0.5}}>
+              <Typography className="cardList">
+                {item.title}
+              </Typography>
+              {currentUser?.email === "admin1@gmail.com" ? (
+                  <Typography variant="body2" color="text.secondary">
+                    {item.description}
+                  </Typography>
+                ) : null
+              }
+            </CardContent>
+            <CardContent sx={{textAlign: 'center', padding: 0}}>
+              <Typography>
+                  ${item.price}
+              </Typography>
+            {currentUser?.email === "admin1@gmail.com" ? (
+                <Typography>
+                    категория: {item.type}
+                </Typography>
+              ) : null
+            }
+            </CardContent>
+            </Link>
+            {icons}
+          </Card>
         </>
   );
 }
