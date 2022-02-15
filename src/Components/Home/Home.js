@@ -5,6 +5,7 @@ import Footer from './Footer/Footer';
 import InfoBlock from './InfoBlock/InfoBlock';
 import Slider from './Slider/Slider';
 
+
 const Home = () => {
     return (
         <div>
@@ -14,6 +15,7 @@ const Home = () => {
             <Slider />
             <InfoBlock />
             <Footer />
+            
         </div>
     );
 };
