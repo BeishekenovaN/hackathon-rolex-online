@@ -146,11 +146,11 @@ export default function MyNavbar() {
     >
         
       <Link  style={{textDecoration: 'none'}} to={!currentUser ? '/login' : '#' }>
-      <MenuItem disabled={currentUser ? true : false}  onClick={handleMenuClose}>Login</MenuItem>
+        <MenuItem disabled={currentUser ? true : false}  onClick={handleMenuClose}>Login</MenuItem>
       </Link>
         
       <Link style={{textDecoration: 'none'}} to={!currentUser ? '/register' : '#'}>
-      <MenuItem  disabled={currentUser ? true : false} onClick={handleMenuClose}>Register</MenuItem>
+        <MenuItem  disabled={currentUser ? true : false} onClick={handleMenuClose}>Register</MenuItem>
       </Link>
     </Menu>
   );
@@ -196,11 +196,7 @@ export default function MyNavbar() {
     </Menu>
   );
 
-  const stylesVideo = {
-    paperContainer: {
-      backgroundImage: `url(${Image})`
-    }
-  }
+  
   const navigate = useNavigate()
 
   const returnHomePage = () => {
@@ -210,7 +206,6 @@ export default function MyNavbar() {
   return (
     <Box sx={{ flexGrow: 1, position: 'absolute',top: 0, zIndex: 5, width: '100%'}}>
       <AppBar position="static" sx={{ backgroundColor: 'transparent', boxShadow: 0, }}  >           
-      {/* <AppBar position="static" sx={{ backgroundColor: 'transparent', boxShadow: 0, }}  >            */}
         <Toolbar>  
           <IconButton
             size="large"
@@ -261,7 +256,7 @@ export default function MyNavbar() {
            <Link to='/cart'>
                 <IconButton>
                     <Badge badgeContent={cartLength} color='secondary'>
-                        <ShoppingCartIcon sx={{color: 'white'}}/>
+                        <ShoppingCartIcon sx={{color: 'red'}}/>
                     </Badge>
                 </IconButton>
            </Link>

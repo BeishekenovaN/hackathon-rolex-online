@@ -9,8 +9,9 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { productContext } from '../../Contexts/ProductsContext';
 import { calcTotalPrice } from '../../Helpers/CalcPrice';
-import { Box, Button, Typography } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 import BackgroundDefault from '../Image/BackgroundDefault/BackgroundDefault';
+import { Link } from 'react-router-dom';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -35,10 +36,10 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 export default function Cart() {
     const { cart, getCart, changeProductCount } = React.useContext(productContext)
-    // console.log(cart, 'helo')
     React.useEffect(() => {
         getCart() 
     }, [])
+
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 700 }} aria-label="customized table">
@@ -95,9 +96,11 @@ export default function Cart() {
             </TableRow>
             <TableRow>
                 <TableCell colSpan={3} align='right'>
+                  <Link to='/pay'>
                     <Button variant='contained' color='success'>
                         Buy
                     </Button>
+                  </Link>
                 </TableCell>
             </TableRow>
         </TableBody>

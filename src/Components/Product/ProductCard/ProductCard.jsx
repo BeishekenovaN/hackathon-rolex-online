@@ -48,14 +48,12 @@ export default function ProductCard({item}) {
         <>
           <Card className='' sx={{ maxWidth: 306 }}>
           <Link to={`/detail/${item.id}`} style={{textDecoration: 'none', color: 'black'}}> 
-          <div cla>
-            <CardMedia className='imgHover'
+            <CardMedia 
+              sx={{width: '300px'}}
               component="img"
-              height="300"
               image={item.image}
               alt={item.title}
-            />
-          </div>
+            />     
             <Typography xs={{fontSize: '15px'}}>
               {item.title}
             </Typography>
