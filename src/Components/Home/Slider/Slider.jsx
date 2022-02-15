@@ -1,9 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
-import reactDom from 'react-dom';
 import Carousel from 'react-elastic-carousel';
 import Item from './Item';
 import '../Slider/Styles.css'
-import ProductCard from '../../Product/ProductCard/ProductCard';
 import { productContext } from '../../../Contexts/ProductsContext';
 import { Link, useSearchParams } from 'react-router-dom';
 import { Card, CardContent, CardMedia, Typography } from '@mui/material';

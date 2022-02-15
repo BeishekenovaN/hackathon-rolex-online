@@ -35,10 +35,6 @@ export default function Register() {
     const {signUp } = React.useContext(productContext)
     const navigate = useNavigate()
 
-
-
-
-
     const handleSubmit = (event) => {
      event.preventDefault();
      const data = new FormData(event.currentTarget);
