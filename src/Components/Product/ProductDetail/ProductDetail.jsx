@@ -1,7 +1,9 @@
 import { Paper, Typography } from '@mui/material';
+import { width } from '@mui/system';
 import React, { useContext, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { productContext } from '../../../Contexts/ProductsContext';
+// import ImgCard from '../ImgCard/'
 
 const ProductDetail = () => {
     const {id} = useParams()
@@ -12,31 +14,46 @@ const ProductDetail = () => {
     }, [id])
 
     return (
-        <Paper elevation={3} >
-            <Typography variant='h2' style={{textAlign: 'center'}}>О товаре</Typography>
-            {
-                detail ? (
-                    <div  style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-                        <div>
-                            <img width='450' src={detail.image}/>
+        <>
+            <div style={{width: '100', height: '81px', backgroundColor: 'grey'}}></div>
+            <div>
+                <img style={{width: '100%'}} src="https://623a6e1cd70c9dbd3d3c-7dcd1a1af7ff1e866416ef4f946f2c74.ssl.cf3.rackcdn.com/rolex/landing-page-2019/banner_img_1680x260.jpg" />
+            </div>
+            <Paper sx={{width: '100%', height: '100%', paddingTop: "100px", boxShadow: 0, display: 'flex', flexDirection: 'column', justifyContent: 'center', flexWrap: 'wrap'}}>
+                <Typography variant='h2' style={{textAlign: 'center'}}>ROLEX</Typography>
+                {
+                    detail ? (
+                        <div  style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'start', padding: 20}}>
+                            <div>
+                                <img width='450' src={detail.image}/>
+                            </div>
+                            <div style={{
+                                width: '450px',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'flex=start',
+                                textAlign: 'start',
+                                justifyContent: 'center'
+                            }}>
+                                <Typography variant='h5'>{detail.type}</Typography>
+                                <Typography variant='h3' sx={{py: 2}}>{detail.title}</Typography>
+                                <Typography variant='h5'>{detail.description}</Typography>
+                                <Typography variant='h4' sx={{py: 2}}>$ {detail.price}</Typography>
+                            </div>
                         </div>
-                        <div style={{
-                            width: '450px',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            alignItems: 'flex-start',
-                            justifyContent: 'center'
-                        }}>
-                            <Typography variant='h3'>{detail.title}</Typography>
-                            <Typography variant='subtitle1'>{detail.type}</Typography>
-                            <Typography variant='body'>{detail.description}</Typography>
-                            <Typography variant='h4'>{detail.price}</Typography>
-                        </div>
-                    </div>
-                ): (<h1> Loading . . .</h1>)
-            }
-        </Paper>
+                    ): (<h1> Loading . . .</h1>)
+                }
+            </Paper>
+        </>
     );
 };
 
 export default ProductDetail;
+
+
+
+
+
+
+
+

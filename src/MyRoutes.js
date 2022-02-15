@@ -7,6 +7,7 @@ import Register from './Components/Auth/Register/Register';
 import Cart from './Components/Cart/Cart';
 import MyNavbar from './Components/Header/MyNavbar';
 import Home from './Components/Home/Home';
+import Payment from './Components/Payment/Payment';
 import ProductDetail from './Components/Product/ProductDetail/ProductDetail';
 import ProductList from './Components/Product/ProductList/ProductList';
 import ProductsContextProvider from './Contexts/ProductsContext';
@@ -26,6 +27,7 @@ const MyRoutes = () => {
                     <Route path='/cart' element={<Cart/>} />
                     <Route path='/register' element={<Register/>} />
                     <Route path='/login' element={<Login/>} />
+                    <Route path='/pay' element={<Payment/>} />
                 </Routes>
             </BrowserRouter>
         </ProductsContextProvider>
