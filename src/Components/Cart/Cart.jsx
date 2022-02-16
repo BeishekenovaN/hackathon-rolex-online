@@ -103,19 +103,18 @@ export default function Cart() {
                       }
               </TableRow>
               <TableRow>
-                  <TableCell colSpan={3} align='right'>
+                  <TableCell colSpan={2} align='right'>
+                    <Link to='/list'>
+                        <Button variant='contained' color='success'>
+                            Back
+                        </Button>
+                      </Link>
                     <Link to='/pay'>
                       <Button variant='contained' color='success'>
                           Buy
                       </Button>
                     </Link>
-                  </TableCell>
-                  <TableCell colSpan={3} align='right'>
-                    <Link to='/list'>
-                      <Button variant='contained' color='success'>
-                          Back to cart
-                      </Button>
-                    </Link>
+                    
                   </TableCell>
               </TableRow>
           </TableBody>

@@ -1,9 +1,9 @@
-import { ShoppingCart } from '@mui/icons-material';
+import { ShoppingBag, ShoppingCart } from '@mui/icons-material';
 import { IconButton, Paper, Typography } from '@mui/material';
-import { width } from '@mui/system';
 import React, { useContext, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { productContext } from '../../../Contexts/ProductsContext';
+import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 // import ImgCard from '../ImgCard/'
 
 const ProductDetail = () => {
@@ -44,9 +44,9 @@ const ProductDetail = () => {
                                     <IconButton sx={{paddingLeft: '50px'}} onClick={() => {
                                         addToCart(detail)  
                                         }} 
-                                        color = {checkProductInCart(detail.id) ? 'secondary' : 'warning'}  
+                                        color = {checkProductInCart(detail.id) ? 'success' : 'primary'}  
                                         >
-                                        <ShoppingCart />
+                                        <ShoppingBag />
                                     </IconButton>
                                 </div>
                             </div>

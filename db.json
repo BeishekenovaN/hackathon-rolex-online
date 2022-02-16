@@ -1,15 +1,7 @@
 {
   "products": [
     {
-      "title": "Часы Oyster Perpetual Cosmograph Daytona, cталь Oystersteel",
-      "image": "https://content.rolex.com/dam/new-watches-2020/homepage/roller/all-watches/watches_0002_m228239-0033-day-date-40_portrait.jpg?imwidth=420",
-      "price": 400000,
-      "type": "Men",
-      "description": "циферблат: Черный; браслет: Oyster; безель: Черный диск Cerachrom; тахиметрическая шкала",
-      "id": 1
-    },
-    {
-      "title": "Часы Oyster Perpetual Explorer",
+      "title": "Oyster Perpetual Explorer",
       "image": "https://content.rolex.com/dam/new-watches-2020/homepage/roller/all-watches/watches_0002_m228239-0033-day-date-40_portrait.jpg?imwidth=420",
       "price": "300",
       "type": "Men",
@@ -17,7 +9,7 @@
       "id": 2
     },
     {
-      "title": "Часы Oyster Perpetual Explorer",
+      "title": "Oyster Perpetual Explorer",
       "image": "https://content.rolex.com/dam/new-watches-2020/homepage/roller/all-watches/watches_0001_m279138rbr-0015-lady-datejust-28_portrait.jpg?imwidth=420",
       "price": 300000,
       "type": "Men",
@@ -25,7 +17,7 @@
       "id": 3
     },
     {
-      "title": "Часы Oyster Perpetual Explorer",
+      "title": "Oyster Perpetual Explorer",
       "image": "https://content.rolex.com/dam/new-watches-2020/homepage/roller/all-watches/watches_0000_m326238-0009-sky-dweller_portrait.jpg?imwidth=420",
       "price": 455555,
       "type": "Men",
@@ -41,7 +33,7 @@
       "id": 5
     },
     {
-      "title": "Часы Oyster Perpetual Milgauss",
+      "title": "Oyster Perpetual Milgauss",
       "image": "https://originalwatches.net/uploads/Tovar/1/86/08/small/zagruzhennoe_thumbnailImage_670x0_false.jpg",
       "price": 50000,
       "type": "Men",
@@ -49,7 +41,7 @@
       "id": 6
     },
     {
-      "title": "Часы Oyster Perpetual Explorer II, cталь Oystersteel",
+      "title": "Oyster Perpetual Explorer II",
       "image": "https://originalwatches.net/uploads/Tovar/1/86/08/small/zagruzhennoe_thumbnailImage_670x0_false.jpg",
       "price": 60000,
       "type": "women",
@@ -57,12 +49,53 @@
       "id": 7
     },
     {
-      "title": "Часы Oyster Perpetual Explorer II, cталь Oystersteel",
+      "title": "Oyster Perpetual Explorer II",
       "image": "https://originalwatches.net/uploads/Tovar/1/86/08/small/zagruzhennoe_thumbnailImage_670x0_false.jpg",
       "price": 60000,
       "type": "men",
       "description": "браслет: Oyster; циферблат: белый; 24‑часовая стрелка в форме стрелы; часовые отметки с индикацией Chromalight",
-      "id": 7
+      "id": 8
+    },
+    {
+      "title": "Oyster Perpetual Explorer II",
+      "image": "https://originalwatches.net/uploads/Tovar/1/86/08/small/zagruzhennoe_thumbnailImage_670x0_false.jpg",
+      "price": 60000,
+      "type": "men",
+      "description": "браслет: Oyster; циферблат: белый; 24‑часовая стрелка в форме стрелы; часовые отметки с индикацией Chromalight",
+      "id": 9
+    },
+    {
+      "title": "Oyster Perpetual Explorer II",
+      "image": "https://originalwatches.net/uploads/Tovar/1/86/08/small/zagruzhennoe_thumbnailImage_670x0_false.jpg",
+      "price": 60000,
+      "type": "men",
+      "description": "браслет: Oyster; циферблат: белый; 24‑часовая стрелка в форме стрелы; часовые отметки с индикацией Chromalight",
+      "id": 10
+    },
+    {
+      "title": "Oyster Perpetual Explorer II",
+      "image": "https://originalwatches.net/uploads/Tovar/1/86/08/small/zagruzhennoe_thumbnailImage_670x0_false.jpg",
+      "price": 60000,
+      "type": "men",
+      "description": "браслет: Oyster; циферблат: белый; 24‑часовая стрелка в форме стрелы; часовые отметки с индикацией Chromalight",
+      "id": 11
+    },
+    {
+      "title": "Oyster Perpetual Explorer II",
+      "image": "https://originalwatches.net/uploads/Tovar/1/86/08/small/zagruzhennoe_thumbnailImage_670x0_false.jpg",
+      "price": 60000,
+      "type": "men",
+      "description": "браслет: Oyster; циферблат: белый; 24‑часовая стрелка в форме стрелы; часовые отметки с индикацией Chromalight",
+      "id": 12
+    },
+    {
+      "title": "Oyster Perpetual Explorer II",
+      "image": "https://cdn.shopify.com/s/files/1/0195/2352/files/Screen_Shot_2020-09-10_at_2.39.19_PM.jpg?v=1599768604",
+      "price": 60000,
+      "type": "men",
+      "description": "браслет: Oyster; циферблат: белый; 24‑часовая стрелка в форме стрелы; часовые отметки с индикацией Chromalight",
+      "id": 12
     }
+    
   ]
 }

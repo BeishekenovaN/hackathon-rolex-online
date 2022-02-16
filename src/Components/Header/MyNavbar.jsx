@@ -175,19 +175,7 @@ export default function MyNavbar() {
           <div onClick={returnHomePage}  className='logo'>
            <Logo />
           </div>
-       
-          {currentUser?.email === "admin1@gmail.com" ? (
-            <Link to='/add'>
-            <Button color='warning'>
-              Добавить
-            </Button>
-            </Link>
-          ) :null
-        }
-          {
-            currentUser?.email // optinal changing если в обхекте есть имейл то вытащи его иначе не иди дальше
-          }
-          
+
           {currentUser ? (
             <Button variant='success' disabled={!currentUser} onClick={handleLogOut}>Log Out</Button>
           ) : null

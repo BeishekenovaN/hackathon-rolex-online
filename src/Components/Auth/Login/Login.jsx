@@ -14,8 +14,7 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { productContext } from '../../../Contexts/ProductsContext';
 import { useNavigate } from 'react-router-dom';
-import BackgroundDefault from '../../Image/BackgroundDefault/BackgroundDefault';
-import { borderRadius } from '@mui/system';
+
 
 
 function Copyright(props) {
@@ -23,7 +22,7 @@ function Copyright(props) {
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+        ROLEX
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -127,7 +126,6 @@ export default function Login() {
         </Box>
         <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
-      <BackgroundDefault />
     </ThemeProvider>   
   );
 }
