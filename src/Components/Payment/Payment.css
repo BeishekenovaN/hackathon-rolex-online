@@ -23,6 +23,11 @@ input {
 }
 
 .form-actions {
-  margin-top: 15px;
+  margin: 15px 10px;
   width: 100px;
+}
+
+.form-cart {
+  margin: 15px 10px;
+  width: 150px;
 }
