@@ -40,6 +40,7 @@ export default function Cart() {
     React.useEffect(() => {
         getCart() 
     }, [])
+    console.log()
 
 
     
@@ -47,10 +48,10 @@ export default function Cart() {
     <>
       <div style={{backgroundColor: 'grey', height: '70px'}}></div>
       <TableContainer  sx={{paddingTop: '50px', display: 'flex', flexWrap: 'wrap'}} component={Paper}>
-        <Table sx={{ minWidth: 700 }} aria-label="customized table">
+        <Table sx={{  }} aria-label="customized table">
           <TableHead>
             <TableRow>
-              <StyledTableCell>Image</StyledTableCell>
+              <StyledTableCell align='center'>Image</StyledTableCell>
               <StyledTableCell align="center">Title</StyledTableCell>
               <StyledTableCell align="center">Price</StyledTableCell>
               <StyledTableCell align="center">Count</StyledTableCell>
@@ -63,8 +64,8 @@ export default function Cart() {
                   <>
                   {cart.products.map((elem) => (
                     <StyledTableRow key={elem.item.id}>
-                          <StyledTableCell component='th' scope='row'>
-                              <img width="60" src={elem.item.image} />
+                          <StyledTableCell align='center' component='th' scope='row'>
+                              <img width="150" src={elem.item.image} />
                           </StyledTableCell>
                           <StyledTableCell align='center'>
                               {elem.item.title}
@@ -80,7 +81,7 @@ export default function Cart() {
                               />
                           </StyledTableCell>
                           <StyledTableCell align='left'>
-                              {elem.item.subPrice}
+                              {elem.subPrice}
                           </StyledTableCell>
                           <StyledTableCell align="center" onClick={() => deleteCartProduct(elem.item.id)}>
                               <DeleteIcon/>

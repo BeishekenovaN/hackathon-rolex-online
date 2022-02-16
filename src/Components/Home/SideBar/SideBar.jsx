@@ -45,7 +45,7 @@ const SideBar = () => {
         setPrice(0)
         setType('')
         setSearchParams({
-            '_limit': 3,
+            '_limit': 6,
             "_page": 1
         })
         getProducts()
@@ -53,42 +53,47 @@ const SideBar = () => {
     
     
     return (
-        <Box sx={{ flexGrow: 1}}>
-            <Grid container spacing={2}>
-                <Grid item md={3}>
-                    <Paper elevation={2}>
+        <Box sx={{ flexGrow: 1, display: 'flex', paddingTop: '10px'}}>
+            <Grid container spacing={2} sx={{display: 'flex', justifyContent: 'center', paddingTop: '50px', boxShadow: 'none'}}>
+                <Grid>
+                    <Paper sx={{boxShadow: 'none', display: 'flex', flexDirection: 'column'}}>
                         <FormControl component='fieldset'>
-                            <FormLabel component='legend'>
-                                Тип
-                            </FormLabel>
                             <RadioGroup    
+                                row
+                                aria-labelledby="demo-row-radio-buttons-group-label"
+                                name="row-radio-buttons-group"
                                 aria-label='gender' 
-                                name='gender1' 
+                                // name='gender1' 
                                 value={type} 
                                 onChange={(e) => handleChangeType("type", e.target.value)}
                             >
                                 <FormControlLabel 
-                                    value='cars'
+                                    value='men'
                                     control={<Radio/>}
-                                    label='cars'
+                                    label="Men's"
                                 />
                                 <FormControlLabel
-                                    value='bikes'
+                                    value='women'
                                     control={<Radio/>}
-                                    label='bikes'
+                                    label="Women's"
+                                />
+                                <FormControlLabel
+                                    value='accessories'
+                                    control={<Radio/>}
+                                    label="Accessories"
                                 />
                             </RadioGroup>
                         </FormControl>
                         
                         <Grid>
-                            <Slider 
-                                onChange={(e) => filterProducts('price_lte', e.target.value)} valueLabelDisplay='auto' max={200000}
+                            <Slider sx={{color: 'black'}}
+                                onChange={(e) => filterProducts('price_lte', e.target.value)} valueLabelDisplay='auto' max={100000}
                                 value={price}
                                 step={500}
                             />
                         </Grid>
-                        <Button onClick={resetFilter}
-                            variant='contained' color='warning'>
+                        <Button sx={{background: 'black'}} onClick={resetFilter}
+                            variant='contained'>
                             Сбросить
                         </Button>
                     </Paper>

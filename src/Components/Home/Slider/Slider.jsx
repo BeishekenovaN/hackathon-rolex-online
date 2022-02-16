@@ -35,7 +35,7 @@ const Slider = () => {
     }, [])
     return (
       <>
-        <div style={{display: 'flex', justifyContent: 'space-around', alignItems: 'center', paddingTop: '1000px', flexWrap: 'wrap' }}>
+        <div style={{display: 'flex', justifyContent: 'space-around', alignItems: 'center', paddingTop: '110vh', flexWrap: 'wrap' }}>
           <h1 style={{padding: '0 15px'}}>Часы Rolex</h1>
           <Link style={{textDecoration: 'none', color: 'black'}} to='/list'>
             <h2 >Посмотреть все</h2>

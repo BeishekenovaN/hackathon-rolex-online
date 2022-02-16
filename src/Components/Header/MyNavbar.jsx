@@ -171,7 +171,7 @@ export default function MyNavbar() {
     
     >
         <Link to='/cart' style={{color: 'white'}}>
-        <IconButton color="inherit">
+        <IconButton sx={{color: 'black'}} color="inherit">
             <Badge badgeContent={cartLength} color="secondary">
                 <ShoppingCartIcon />
             </Badge>
@@ -253,7 +253,7 @@ export default function MyNavbar() {
            <Link to='/cart'>
                 <IconButton>
                     <Badge badgeContent={cartLength} color='secondary'>
-                        <ShoppingCartIcon sx={{color: 'red'}}/>
+                        <ShoppingCartIcon sx={{color: 'white'}}/>
                     </Badge>
                 </IconButton>
            </Link>
