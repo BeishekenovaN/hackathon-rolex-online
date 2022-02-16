@@ -8,9 +8,11 @@ import Cart from './Components/Cart/Cart';
 import Cosmograph from './Components/Cosmograph/Cosmograph';
 import MyNavbar from './Components/Header/MyNavbar';
 import Home from './Components/Home/Home';
+import Payment from './Components/Payment/Payment';
 import ProductDetail from './Components/Product/ProductDetail/ProductDetail';
 import ProductList from './Components/Product/ProductList/ProductList';
 import ProductsContextProvider from './Contexts/ProductsContext';
+
 
 
 const MyRoutes = () => {
@@ -27,8 +29,12 @@ const MyRoutes = () => {
                     <Route path='/cart' element={<Cart/>} />
                     <Route path='/register' element={<Register/>} />
                     <Route path='/login' element={<Login/>} />
+<<<<<<< HEAD
                     <Route path='/cosmograph' element={<Cosmograph/>}/>
                     
+=======
+                    <Route path='/pay' element={<Payment/>} />
+>>>>>>> a9fcca17644b1ee365fe4a7b0c002763c29aefe1
                 </Routes>
             </BrowserRouter>
         </ProductsContextProvider>

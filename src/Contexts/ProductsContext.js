@@ -185,6 +185,22 @@ const ProductsContextProvider = ({children}) => {
         return newCart.length > 0 ? true : false
     }
 
+    function deleteCartProduct(id){
+        let toDelete = JSON.parse(localStorage.getItem("cart"));
+        toDelete.products = toDelete.products.filter(
+          (elem) => elem.item.id !== id
+        );
+        localStorage.setItem("cart", JSON.stringify(toDelete))
+        getCart()
+        console.log(toDelete, 'carts')
+        
+        dispatch({
+            type: "CHANGE_CART_COUNT",
+            payload: toDelete.products.length
+        })
+      }
+  
+
 
     //! GEt Detail
 
@@ -236,6 +252,7 @@ const ProductsContextProvider = ({children}) => {
             signUp,
             logout,
             useAuth,
+            deleteCartProduct,
             edit: state.edit,
             products: state.products,
             cartLength: state.cartLength,

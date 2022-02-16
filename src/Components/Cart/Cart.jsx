@@ -9,8 +9,10 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { productContext } from '../../Contexts/ProductsContext';
 import { calcTotalPrice } from '../../Helpers/CalcPrice';
-import { Box, Button, Typography } from '@mui/material';
+import { Button, IconButton, Typography } from '@mui/material';
 import BackgroundDefault from '../Image/BackgroundDefault/BackgroundDefault';
+import { Link } from 'react-router-dom';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -34,76 +36,93 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 
 export default function Cart() {
-    const { cart, getCart, changeProductCount } = React.useContext(productContext)
-    // console.log(cart, 'helo')
+    const { cart, getCart, changeProductCount, deleteCartProduct } = React.useContext(productContext)
     React.useEffect(() => {
         getCart() 
     }, [])
+
+
+    
   return (
-    <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 700 }} aria-label="customized table">
-        <TableHead>
-          <TableRow>
-            <StyledTableCell>Image</StyledTableCell>
-            <StyledTableCell align="right">Title</StyledTableCell>
-            <StyledTableCell align="right">Price</StyledTableCell>
-            <StyledTableCell align="right">Count</StyledTableCell>
-            <StyledTableCell align="right">SubPrice</StyledTableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-            {cart.products ? (
-                <>
-                {cart.products.map((elem) => (
-                   <StyledTableRow key={elem.item.id}>
-                        <StyledTableCell component='th' scope='row'>
-                            <img width="60" src={elem.item.image} />
-                        </StyledTableCell>
-                        <StyledTableCell align='right'>
-                            {elem.item.title}
-                        </StyledTableCell>
-                        <StyledTableCell align='right'>
-                            {elem.item.price}
-                        </StyledTableCell>
-                        <StyledTableCell align='right'>
-                            <input 
-                                type='number'
-                                value={elem.count}
-                                onChange={(e) => changeProductCount(e.target.value, elem.item.id)}
-                            />
-                        </StyledTableCell>
-                        <StyledTableCell align='right'>
-                            {elem.item.subPrice}
-                        </StyledTableCell>
-                   </StyledTableRow> 
-                ))}
-                </>
-            ) : (null)} 
+    <>
+      <div style={{backgroundColor: 'grey', height: '70px'}}></div>
+      <TableContainer  sx={{paddingTop: '50px', display: 'flex', flexWrap: 'wrap'}} component={Paper}>
+        <Table sx={{ minWidth: 700 }} aria-label="customized table">
+          <TableHead>
             <TableRow>
-                <TableCell rowSpan={3}/>
-                <TableCell colSpan={2}>
-                    <Typography variant='h4'>Total:</Typography>
-                </TableCell>
-                    {
-                        cart.products ? (
-                            <TableCell align='right'>
-                                <Typography variant='h5'>{calcTotalPrice(cart.products)}</Typography>
-                            </TableCell>
-                        ) : (null)
-                    }
-            
+              <StyledTableCell>Image</StyledTableCell>
+              <StyledTableCell align="center">Title</StyledTableCell>
+              <StyledTableCell align="center">Price</StyledTableCell>
+              <StyledTableCell align="center">Count</StyledTableCell>
+              <StyledTableCell align="left">SubPrice</StyledTableCell>
+              <StyledTableCell align="left"></StyledTableCell>
             </TableRow>
-            <TableRow>
-                <TableCell colSpan={3} align='right'>
-                    <Button variant='contained' color='success'>
-                        Buy
-                    </Button>
-                </TableCell>
-            </TableRow>
-        </TableBody>
-      </Table>
-      <BackgroundDefault />
-    </TableContainer>
+          </TableHead>
+          <TableBody>
+              {cart.products ? (
+                  <>
+                  {cart.products.map((elem) => (
+                    <StyledTableRow key={elem.item.id}>
+                          <StyledTableCell component='th' scope='row'>
+                              <img width="60" src={elem.item.image} />
+                          </StyledTableCell>
+                          <StyledTableCell align='center'>
+                              {elem.item.title}
+                          </StyledTableCell>
+                          <StyledTableCell align='left'>
+                            $  {elem.item.price}
+                          </StyledTableCell>
+                          <StyledTableCell align='center'>
+                              <input style={{width: '70px'}}
+                                  type='number'
+                                  value={elem.count}  
+                                  onChange={(e) => changeProductCount(e.target.value, elem.item.id)}
+                              />
+                          </StyledTableCell>
+                          <StyledTableCell align='left'>
+                              {elem.item.subPrice}
+                          </StyledTableCell>
+                          <StyledTableCell align="center" onClick={() => deleteCartProduct(elem.item.id)}>
+                              <DeleteIcon/>
+                          </StyledTableCell>
+                    </StyledTableRow> 
+                  ))}
+                  </>
+              ) : (null)} 
+              <TableRow>
+                  <TableCell rowSpan={3}/>
+                  <TableCell colSpan={2}>
+                      <Typography variant='h4'>Total:</Typography>
+                  </TableCell>
+                      {
+                          cart.products ? (
+                              <TableCell align='right'>
+                                  <Typography variant='h5'>$ {calcTotalPrice(cart.products)}</Typography>
+                              </TableCell>
+                          ) : (null)
+                      }
+              
+              </TableRow>
+              <TableRow>
+                  <TableCell colSpan={3} align='right'>
+                    <Link to='/pay'>
+                      <Button variant='contained' color='success'>
+                          Buy
+                      </Button>
+                    </Link>
+                  </TableCell>
+                  <TableCell colSpan={3} align='right'>
+                    <Link to='/list'>
+                      <Button variant='contained' color='success'>
+                          Back to cart
+                      </Button>
+                    </Link>
+                  </TableCell>
+              </TableRow>
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </>
   );
 }
 
