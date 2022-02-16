@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import Cards from "react-credit-cards";
+import Cards from 'react-credit-cards'
 import "react-credit-cards/es/styles-compiled.css";
 import { Link } from "react-router-dom";
 import './Payment.css'
@@ -18,7 +18,7 @@ export default function App() {
   const ref = useRef(null);
   return (
     <div className="cards">
-      <div style={{paddingTop: '200px', width: '100%', height: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+      <div style={{paddingTop: '100px', width: '100%', height: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
         <Cards
           number={number}
           name={name}
