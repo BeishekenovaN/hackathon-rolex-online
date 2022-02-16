@@ -111,6 +111,11 @@ const ProductList = () => {
               sx={{border: '2px solid'}} 
             />
           </Search>
+<<<<<<< HEAD
+=======
+          
+
+>>>>>>> 55bed6efc6a076238f2976ed5ebda9f8bf5a0c16
             <Box sx={{flexGrow: 1, margin: 4}}>
                 <Grid container spacing={{xs: 2, md: 3}} columns={{xs: 4, sm: 8, md: 12}}>
                     {
