@@ -64,12 +64,16 @@ export default function App() {
             onFocus={(e) => setFocus(e.target.name)}
           />
         </form>
-        <Link to='/'>
-          <div className="form-actions">
-              <button className="btn btn-primary btn-block">PAY</button>
-          </div>
-        </Link>
-        
+          <Link to='/'>
+            <div className="form-actions">
+                <button className="btn btn-primary btn-block">PAY</button>
+            </div>
+          </Link>
+          <Link to='/cart'>
+            <div className="form-cart">
+                <button className="btn btn-primary btn-block">Back to cart</button>
+            </div>
+          </Link>
       </div>
     </div>
   );

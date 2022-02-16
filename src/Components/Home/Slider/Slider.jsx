@@ -37,7 +37,9 @@ const Slider = () => {
       <>
         <div style={{display: 'flex', justifyContent: 'space-around', alignItems: 'center', paddingTop: '1000px', flexWrap: 'wrap' }}>
           <h1 style={{padding: '0 15px'}}>Часы Rolex</h1>
-          <h2 >Посмотреть все</h2>
+          <Link style={{textDecoration: 'none', color: 'black'}} to='/list'>
+            <h2 >Посмотреть все</h2>
+          </Link>
         </div>
             <div className='Slider' >
               <Carousel breakPoints={breakPoints}>
