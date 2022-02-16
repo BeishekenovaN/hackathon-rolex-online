@@ -52,7 +52,15 @@
       "title": "Часы Oyster Perpetual Explorer II, cталь Oystersteel",
       "image": "https://originalwatches.net/uploads/Tovar/1/86/08/small/zagruzhennoe_thumbnailImage_670x0_false.jpg",
       "price": 60000,
-      "type": "Men",
+      "type": "women",
+      "description": "браслет: Oyster; циферблат: белый; 24‑часовая стрелка в форме стрелы; часовые отметки с индикацией Chromalight",
+      "id": 7
+    },
+    {
+      "title": "Часы Oyster Perpetual Explorer II, cталь Oystersteel",
+      "image": "https://originalwatches.net/uploads/Tovar/1/86/08/small/zagruzhennoe_thumbnailImage_670x0_false.jpg",
+      "price": 60000,
+      "type": "men",
       "description": "браслет: Oyster; циферблат: белый; 24‑часовая стрелка в форме стрелы; часовые отметки с индикацией Chromalight",
       "id": 7
     }

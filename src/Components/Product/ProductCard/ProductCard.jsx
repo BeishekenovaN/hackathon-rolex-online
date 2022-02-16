@@ -12,7 +12,6 @@ import { Link } from 'react-router-dom';
 import { ShoppingCart } from '@mui/icons-material';
 import './ProductCard.css'
 
-
 export default function ProductCard({item}) {
   const {deleteProduct, addToCart, checkProductInCart, useAuth} = React.useContext(productContext)
   const currentUser = useAuth()

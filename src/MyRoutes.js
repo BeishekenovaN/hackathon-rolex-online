@@ -5,6 +5,7 @@ import EditProduct from './Components/Admin/EditProduct/EditProduct';
 import Login from './Components/Auth/Login/Login';
 import Register from './Components/Auth/Register/Register';
 import Cart from './Components/Cart/Cart';
+import Cosmograph from './Components/Cosmograph/Cosmograph';
 import MyNavbar from './Components/Header/MyNavbar';
 import Home from './Components/Home/Home';
 import Payment from './Components/Payment/Payment';
@@ -28,6 +29,7 @@ const MyRoutes = () => {
                     <Route path='/cart' element={<Cart/>} />
                     <Route path='/register' element={<Register/>} />
                     <Route path='/login' element={<Login/>} />
+                    <Route path='/cosmograph' element={<Cosmograph/>}/>         
                     <Route path='/pay' element={<Payment/>} />
                 </Routes>
             </BrowserRouter>

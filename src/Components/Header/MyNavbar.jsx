@@ -18,49 +18,53 @@ import { productContext } from '../../Contexts/ProductsContext';
 import { Button } from '@mui/material';
 import './MyNavbar.css'
 import  Logo from '../Image/logo/Logo'
+<<<<<<< HEAD
+
+=======
+>>>>>>> 69408a2cb78255098f9519fc892fb4cff35f6f15
 
 
 
 
-const Search = styled('div')(({ theme }) => ({
-  position: 'relative',
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
-  '&:hover': {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
-  },
-  marginRight: theme.spacing(2),
-  marginLeft: 0,
-  width: '100%',
-  [theme.breakpoints.up('sm')]: {
-    marginLeft: theme.spacing(3),
-    width: 'auto',
-  },
-}));
+// const Search = styled('div')(({ theme }) => ({
+//   position: 'relative',
+//   borderRadius: theme.shape.borderRadius,
+//   backgroundColor: alpha(theme.palette.common.white, 0.15),
+//   '&:hover': {
+//     backgroundColor: alpha(theme.palette.common.white, 0.25),
+//   },
+//   marginRight: theme.spacing(2),
+//   marginLeft: 0,
+//   width: '100%',
+//   [theme.breakpoints.up('sm')]: {
+//     marginLeft: theme.spacing(3),
+//     width: 'auto',
+//   },
+// }));
 
-const SearchIconWrapper = styled('div')(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: '100%',
-  position: 'absolute',
-  pointerEvents: 'none',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-}));
+// const SearchIconWrapper = styled('div')(({ theme }) => ({
+//   padding: theme.spacing(0, 2),
+//   height: '100%',
+//   position: 'absolute',
+//   pointerEvents: 'none',
+//   display: 'flex',
+//   alignItems: 'center',
+//   justifyContent: 'center',
+// }));
 
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: 'inherit',
-  '& .MuiInputBase-input': {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('md')]: {
-      width: '20ch',
-    },
-  },
-}));
+// const StyledInputBase = styled(InputBase)(({ theme }) => ({
+//   color: 'inherit',
+//   '& .MuiInputBase-input': {
+//     padding: theme.spacing(1, 1, 1, 0),
+//     // vertical padding + font size from searchIcon
+//     paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+//     transition: theme.transitions.create('width'),
+//     width: '100%',
+//     [theme.breakpoints.up('md')]: {
+//       width: '20ch',
+//     },
+//   },
+// }));
 
 export default function MyNavbar() {
     const { cartLength, getCartLength, getProducts, useAuth, logout } = React.useContext(productContext)
@@ -85,17 +89,17 @@ export default function MyNavbar() {
     }, [searchVal])
 
 
-    const handleValue = (e) => {
-        const search = new URLSearchParams(window.location.search)
-        search.set('q', e.target.value)
-        setSearchVal(e.target.value)
-        setSearchParams({
-            'q': searchVal,
-            '_limit': 3,
-            '_page': 1
-        })
-        getProducts()
-    }
+    // const handleValue = (e) => {
+    //     const search = new URLSearchParams(window.location.search)
+    //     search.set('q', e.target.value)
+    //     setSearchVal(e.target.value)
+    //     setSearchParams({
+    //         'q': searchVal,
+    //         '_limit': 3,
+    //         '_page': 1
+    //     })
+    //     getProducts()
+    // }
 
     React.useEffect(() => {
         getCartLength()
@@ -170,8 +174,13 @@ export default function MyNavbar() {
       onClose={handleMobileMenuClose}
     
     >
+<<<<<<< HEAD
         <Link to='/cart' style={{color: 'white'}}>
+        <IconButton sx={{color: 'black'}} color="inherit">
+=======
+        <Link to='/cart' style={{color: 'black'}}>
         <IconButton color="inherit">
+>>>>>>> 78750d39ea9338ad63851551a386e35bfbd17bbc
             <Badge badgeContent={cartLength} color="secondary">
                 <ShoppingCartIcon />
             </Badge>
@@ -214,7 +223,7 @@ export default function MyNavbar() {
             <MenuIcon />
           </IconButton>
 
-          <Search>
+          {/* <Search>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
@@ -224,7 +233,7 @@ export default function MyNavbar() {
               value={searchVal}
               onChange={handleValue}
             />
-          </Search>
+          </Search> */}
 
           
           <Box sx={{ flexGrow: 1 }} />
@@ -253,7 +262,7 @@ export default function MyNavbar() {
            <Link to='/cart'>
                 <IconButton>
                     <Badge badgeContent={cartLength} color='secondary'>
-                        <ShoppingCartIcon sx={{color: 'red'}}/>
+                        <ShoppingCartIcon sx={{color: 'white'}}/>
                     </Badge>
                 </IconButton>
            </Link>
