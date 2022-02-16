@@ -98,14 +98,7 @@ const ProductList = () => {
     return (
         <div style={{}}>
             <div style={{backgroundColor: 'black', width: '100%',height:' 100px'}}></div>
-<<<<<<< HEAD
-            <SideBar />   
-=======
-<<<<<<< HEAD
-            <SideBar /> 
-=======
             <SideBar />  
-
             <Search  >
             <SearchIconWrapper  >
               <SearchIcon  />
@@ -118,10 +111,6 @@ const ProductList = () => {
               sx={{border: '2px solid'}} 
             />
           </Search>
-          
-
->>>>>>> 78750d39ea9338ad63851551a386e35bfbd17bbc
->>>>>>> 69408a2cb78255098f9519fc892fb4cff35f6f15
             <Box sx={{flexGrow: 1, margin: 4}}>
                 <Grid container spacing={{xs: 2, md: 3}} columns={{xs: 4, sm: 8, md: 12}}>
                     {
