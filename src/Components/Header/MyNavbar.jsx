@@ -170,13 +170,8 @@ export default function MyNavbar() {
       onClose={handleMobileMenuClose}
     
     >
-<<<<<<< HEAD
         <Link to='/cart' style={{color: 'white'}}>
         <IconButton sx={{color: 'black'}} color="inherit">
-=======
-        <Link to='/cart' style={{color: 'black'}}>
-        <IconButton color="inherit">
->>>>>>> 78750d39ea9338ad63851551a386e35bfbd17bbc
             <Badge badgeContent={cartLength} color="secondary">
                 <ShoppingCartIcon />
             </Badge>
