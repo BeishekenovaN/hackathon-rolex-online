@@ -37,11 +37,17 @@
 
 .bgLogin{
     width: 100%;
-    height: auto;
+    height: 100vh;
     object-fit: cover;
+<<<<<<< HEAD
+    position: absolute;
+    z-index: 0;
+=======
     /* position: fixed; */
     /* z-index: -1; */
+>>>>>>> a9fcca17644b1ee365fe4a7b0c002763c29aefe1
     top: 0;
+    left: 0;
 }
 .logo  { 
     position: absolute;
