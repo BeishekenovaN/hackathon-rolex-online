@@ -11,17 +11,14 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import AccountCircle from '@mui/icons-material/AccountCircle';
-import MailIcon from '@mui/icons-material/Mail';
-import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { productContext } from '../../Contexts/ProductsContext';
 import { Button } from '@mui/material';
-// import Video from '../Image/homepage_cosmograph_daytona_m116503-0004_0001.mp4'
 import './MyNavbar.css'
 import  Logo from '../Image/logo/Logo'
-import BackgroundVideo from '../Image/BackgroundVideo/BackgroundVideo';
+
 
 
 
