@@ -29,12 +29,8 @@ const MyRoutes = () => {
                     <Route path='/cart' element={<Cart/>} />
                     <Route path='/register' element={<Register/>} />
                     <Route path='/login' element={<Login/>} />
-<<<<<<< HEAD
-                    <Route path='/cosmograph' element={<Cosmograph/>}/>
-                    
-=======
+                    <Route path='/cosmograph' element={<Cosmograph/>}/>         
                     <Route path='/pay' element={<Payment/>} />
->>>>>>> a9fcca17644b1ee365fe4a7b0c002763c29aefe1
                 </Routes>
             </BrowserRouter>
         </ProductsContextProvider>
