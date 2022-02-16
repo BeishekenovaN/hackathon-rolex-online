@@ -9,11 +9,11 @@
       "id": 1
     },
     {
-      "title": "1",
+      "title": "Часы Oyster Perpetual Explorer",
       "image": "https://originalwatches.net/uploads/Tovar/1/86/08/small/zagruzhennoe_thumbnailImage_670x0_false.jpg",
-      "price": 3,
-      "type": "4",
-      "description": "5",
+      "price": "300",
+      "type": "Men",
+      "description": "cталь Oystersteelвыразительный черный циферблат; характерные цифры 3, 6 и 9 с индикацией Chromalight.",
       "id": 2
     },
     {
@@ -56,6 +56,5 @@
       "description": "5",
       "id": 7
     }
-
   ]
 }

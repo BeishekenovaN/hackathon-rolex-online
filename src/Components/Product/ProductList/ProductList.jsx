@@ -10,14 +10,11 @@ const ProductList = () => {
     const { products, getProducts, paginatedPages } = useContext(productContext)
     const search = new URLSearchParams(window.location.search)
     const [searchParams, setSearchParams] = useSearchParams()
-    const [limit, setLimit] = useState(3)
+    const [limit, setLimit] = useState(6)
     const [page, setPage] = useState(searchParams.get('_page') ? searchParams.get("_page") : 1)
     const navigate = useNavigate()
 
-    useEffect(() => {
-        getProducts()
-    }, [])
-
+   
 
     useEffect(() =>{
         setSearchParams({
@@ -25,6 +22,11 @@ const ProductList = () => {
             "_page": page
         })
     }, [limit, page])
+
+    useEffect(() => {
+        getProducts()
+    }, [])
+
 
     const handlePage = (e, pageVal) => {
         let newPath = `${window.location.pathname}?${search.toString()}`
@@ -35,14 +37,14 @@ const ProductList = () => {
     }
 
     return (
-        <div style={{marginTop: '500px'}}>
+        <div style={{marginTop: '100px'}}>
             <SideBar />   
             <Box sx={{flexGrow: 1, margin: 4}}>
                 <Grid container spacing={{xs: 2, md: 3}} columns={{xs: 4, sm: 8, md: 12}}>
                     {
                         products ? (
                             products.map((item, index) => (
-                                    <Grid item xs={2} sm={4} md={4} key={index}>
+                                    <Grid sx={{display: 'flex', justifyContent: 'center'}} item xs={2} sm={4} md={4} key={index}>
                                         <ProductCard item={item} key={index}/>
                                     </Grid>
                             ))
