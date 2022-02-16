@@ -1,4 +1,5 @@
-import { Paper, Typography } from '@mui/material';
+import { ShoppingCart } from '@mui/icons-material';
+import { IconButton, Paper, Typography } from '@mui/material';
 import { width } from '@mui/system';
 import React, { useContext, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
@@ -7,8 +8,8 @@ import { productContext } from '../../../Contexts/ProductsContext';
 
 const ProductDetail = () => {
     const {id} = useParams()
-    const { detail, getDetail } = useContext(productContext)
-
+    const { detail, getDetail, checkProductInCart, addToCart } = useContext(productContext)
+    console.log(detail, 'detail')
     useEffect(() => {
         getDetail(id)
     }, [id])
@@ -19,13 +20,17 @@ const ProductDetail = () => {
             <div>
                 <img style={{width: '100%'}} src="https://623a6e1cd70c9dbd3d3c-7dcd1a1af7ff1e866416ef4f946f2c74.ssl.cf3.rackcdn.com/rolex/landing-page-2019/banner_img_1680x260.jpg" />
             </div>
-            <Paper sx={{width: '100%', height: '100%', paddingTop: "100px", boxShadow: 0, display: 'flex', flexDirection: 'column', justifyContent: 'center', flexWrap: 'wrap'}}>
+            <Paper sx={{width: '100%', height: '100%', padding: "100px 0", boxShadow: 0, display: 'flex', flexDirection: 'column', justifyContent: 'center',}}>
                 <Typography variant='h2' style={{textAlign: 'center'}}>ROLEX</Typography>
                 {
                     detail ? (
+<<<<<<< HEAD
+                        <div  style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'start', padding: 20,  flexWrap: 'wrap'}}>
+=======
                         <div  style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'start', padding: 20, flexWrap: 'wrap'}}>
+>>>>>>> 78750d39ea9338ad63851551a386e35bfbd17bbc
                             <div>
-                                <img width='450' src={detail.image}/>
+                                <img width='320' src={detail.image}/>
                             </div>
                             <div style={{
                                 width: '450px',
@@ -38,7 +43,16 @@ const ProductDetail = () => {
                                 <Typography variant='h5'>{detail.type}</Typography>
                                 <Typography variant='h3' sx={{py: 2}}>{detail.title}</Typography>
                                 <Typography variant='h5'>{detail.description}</Typography>
-                                <Typography variant='h4' sx={{py: 2}}>$ {detail.price}</Typography>
+                                <div style={{display: 'flex'}}>
+                                    <Typography variant='h4' sx={{py: 2}}>$ {detail.price}</Typography>
+                                    <IconButton sx={{paddingLeft: '50px'}} onClick={() => {
+                                        addToCart(detail)  
+                                        }} 
+                                        color = {checkProductInCart(detail.id) ? 'secondary' : 'warning'}  
+                                        >
+                                        <ShoppingCart />
+                                    </IconButton>
+                                </div>
                             </div>
                         </div>
                     ): (<h1> Loading . . .</h1>)
