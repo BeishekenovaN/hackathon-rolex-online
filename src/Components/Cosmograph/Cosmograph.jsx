@@ -18,10 +18,6 @@ const Cosmograph = () => {
                     <p style={{fontFamily: "sans-serif", color: 'white', fontSize: "20px", padding: '0px 70px', margin: '0px', }} >Представленные в 1963 году часы Cosmograph Daytona были созданы для профессиональных автогонщиков. Название и функции этих легендарных часов однозначно указывают на их принадлежность к миру автомобильного спорта. На протяжении более 50 лет с момента своего создания модель Cosmograph Daytona постоянно развивалась, оставаясь уникальной в своем роде и непревзойденной среди спортивных хронографов.</p>
                 </div>
 
-                {/* <div style={{ backgroundColor:'pink', padding: '100px 250px 40px 250px', margin: '0px' }}>
-                    Slider with products
-                </div> */}
-
                 <div>
                     <img style={{width:'100%', height: '100vh'}}src="https://content.rolex.com/dam/watches/family-pages/cosmograph-daytona/professional-watches-daytona-race_dayt13sc_0002.jpg?imwidth=2880" alt="photo" />
                 </div>
@@ -35,28 +31,16 @@ const Cosmograph = () => {
                 </div> */}
 
                 <video autoPlay muted loop style={{ width:'100%', height:'100vh', position:'center', padding: '0px' }} src="https://content.rolex.com/dam/watches/family-pages/cosmograph-daytona/video/the-rolex-way/professional-watches-cosmograph-daytona-rolex-way-video-2020_rolex_daytona_film-hd_verti-no_logo.mp4"></video> 
-           
-
-                <div style={{ backgroundImage: "url('https://content.rolex.com/dam/watches/family-pages/cosmograph-daytona/professional-watches-cosmograph-daytona-movement_movt_4130_13jva_01_portrait.jpg?imwidth=420')", backgroundSize: '1030px 650px', backgroundPosition: 'center', width: '100%', height: '100vh'}}>
-                    <p style={{fontFamily: "sans-serif", fontSize:"20px", textAlign: 'left', lineHeight: '1.7',padding: '100px 250px 40px 250px', margin: '0px' }} >В модели Cosmograph Daytona установлен калибр 4130 — механизм хронографа с автоматическим подзаводом, разработанный и изготовленный компанией Rolex. Этот механизм насчитывает меньше деталей, чем у обычного хронографа, что улучшает его надежность. Механизм очень компактен и оставляет достаточно места для большей заводной пружины. Запас хода калибра 4130 составляет 72 часа.</p>
-
-                </div>
-
-                {/* <div style={{ backgroundColor:'pink', padding: '100px 250px 40px 250px', margin: '0px' }}>
-                    Slider Хронограф для гоночной трассы
-                </div> */}
-
                 <video autoPlay muted loop style={{ width:'100%', height:'100vh', position:'center', padding: '0px' }} src="https://content.rolex.com/dam/watches/family-pages/cosmograph-daytona/video/professional_watches_cosmograph_daytona_video_autoplay_0001.mp4" type="video/mp4"></video>
 
                 <div style={{ backgroundImage: "url('https://content.rolex.com/dam/watches/family-pages/cosmograph-daytona/professional-watches-cosmograph-daytona-carte-blanche_m116500ln-0001_201705rg_001_portrait.jpg?imwidth=420')", backgroundSize: '1050px 900px', backgroundPosition: 'center', width: '100%', height:'120vh'}}>
-                    <p style={{fontFamily: "sans-serif", color: 'white', fontSize:"20px", lineHeight: '1.7', padding: '100px 250px 40px 250px', margin: '0px' }}>Часы Cosmograph Daytona неразрывно связаны с миром автомобильных гонок. Они позволяют пилотам гоночных болидов замерять время и считывать скорость на тахиметрической шкале безеля, которая является отличительной особенностью данной модели. Часы названы в честь города Дейтона в штате Флорида, где в начале XX века зародилась любовь к автогонкам и страсть к скорости. Название отражает особые связи, в том числе и исторические, между Rolex и миром автомобильного спорта, которые еще более укрепились в 2013 году, когда часовая марка заключила сотрудничество с Formula 1® в качестве Глобального партнера и Официальных часов.</p>
-                    
+                    <p style={{fontFamily: "sans-serif", color: 'white', fontSize:"20px", lineHeight: '1.7', padding: '100px 250px 40px 250px', margin: '0px' }}>Часы Cosmograph Daytona неразрывно связаны с миром автомобильных гонок. Они позволяют пилотам гоночных болидов замерять время и считывать скорость на тахиметрической шкале безеля, которая является отличительной особенностью данной модели. Часы названы в честь города Дейтона в штате Флорида, где в начале XX века зародилась любовь к автогонкам и страсть к скорости. Название отражает особые связи, в том числе и исторические, между Rolex и миром автомобильного спорта, которые еще более укрепились в 2013 году, когда часовая марка заключила сотрудничество с Formula 1® в качестве Глобального партнера и Официальных часов.</p>  
                 </div>
 
                 <video autoPlay muted loop style={{ width:'100%', height:'100vh', position:'center', padding: '0px' }}src="https://content.rolex.com/dam/watches/family-pages/cosmograph-daytona/video/professional_watches_cosmograph_daytona_tbt_0001_1920x1080.mp4"></video>
 
                 <div style={{ backgroundColor: 'lightGrey', width: '100%', height:'100vh'}}>
-                    <p style={{fontFamily: "sans-serif", fontSize:"25px", lineHeight: '1.7', textAlign: 'center', padding: '100px 350px 60px 350px', margin: '0px' }}>Связаться 
+                    <p style={{fontFamily: "sans-serif", fontSize:"25px", lineHeight: '1.7', textAlign: 'center'}}>Связаться 
                     с дистрибьютором по вопросам о модели Cosmograph Daytona</p>
                     <p style={{fontFamily: "sans-serif", fontSize:"20px", textAlign: 'center', padding: '0px 250px 250px 250px', margin: '0px' }}>Продавать часы Rolex разрешено только официальным дистрибьюторам Rolex. Располагая необходимыми знаниями и умениями, они помогут Вам сделать правильный выбор на всю жизнь.</p>
                     
