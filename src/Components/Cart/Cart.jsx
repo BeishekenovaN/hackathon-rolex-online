@@ -40,21 +40,14 @@ export default function Cart() {
     React.useEffect(() => {
         getCart() 
     }, [])
-<<<<<<< HEAD
-=======
     console.log()
 
 
->>>>>>> 55bed6efc6a076238f2976ed5ebda9f8bf5a0c16
   return (
     <>
       <div style={{backgroundColor: 'grey', height: '70px'}}></div>
       <TableContainer  sx={{paddingTop: '50px', display: 'flex', flexWrap: 'wrap'}} component={Paper}>
-<<<<<<< HEAD
-        <Table aria-label="customized table">
-=======
         <Table sx={{  }} aria-label="customized table">
->>>>>>> 55bed6efc6a076238f2976ed5ebda9f8bf5a0c16
           <TableHead>
             <TableRow>
               <StyledTableCell align='center'>Image</StyledTableCell>
@@ -70,11 +63,7 @@ export default function Cart() {
                   <>
                   {cart.products.map((elem) => (
                     <StyledTableRow key={elem.item.id}>
-<<<<<<< HEAD
-                          <StyledTableCell  align='center'component='th' scope='row'>
-=======
                           <StyledTableCell align='center' component='th' scope='row'>
->>>>>>> 55bed6efc6a076238f2976ed5ebda9f8bf5a0c16
                               <img width="150" src={elem.item.image} />
                           </StyledTableCell>
                           <StyledTableCell align='center'>

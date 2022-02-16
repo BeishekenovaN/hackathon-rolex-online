@@ -24,11 +24,7 @@ const ProductDetail = () => {
                 <Typography variant='h2' style={{textAlign: 'center'}}>ROLEX</Typography>
                 {
                     detail ? (
-<<<<<<< HEAD
-                        <div  style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'start', padding: 20, flexWrap: 'wrap'}}>
-=======
                         <div  style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'start', padding: 20,  flexWrap: 'wrap'}}>
->>>>>>> 55bed6efc6a076238f2976ed5ebda9f8bf5a0c16
                             <div>
                                 <img width='320' src={detail.image}/>
                             </div>
