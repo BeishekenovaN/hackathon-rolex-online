@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import Cards from "react-credit-cards";
+import Cards from 'react-credit-cards'
 import "react-credit-cards/es/styles-compiled.css";
 import { Link } from "react-router-dom";
 import './Payment.css'

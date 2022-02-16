@@ -47,8 +47,13 @@ export default function Cart() {
   return (
     <>
       <div style={{backgroundColor: 'grey', height: '70px'}}></div>
+<<<<<<< HEAD
       <TableContainer  sx={{paddingTop: '50px', display: 'flex', flexWrap: 'wrap'}} component={Paper}>
         <Table sx={{  }} aria-label="customized table">
+=======
+      <TableContainer  sx={{paddingTop: '50px', display: 'flex'}} component={Paper}>
+        <Table sx={{minWidth: 320}} aria-label="customized table">
+>>>>>>> 78750d39ea9338ad63851551a386e35bfbd17bbc
           <TableHead>
             <TableRow>
               <StyledTableCell align='center'>Image</StyledTableCell>
@@ -57,6 +62,7 @@ export default function Cart() {
               <StyledTableCell align="center">Count</StyledTableCell>
               <StyledTableCell align="left">SubPrice</StyledTableCell>
               <StyledTableCell align="left"></StyledTableCell>
+
             </TableRow>
           </TableHead>
           <TableBody>
@@ -64,13 +70,17 @@ export default function Cart() {
                   <>
                   {cart.products.map((elem) => (
                     <StyledTableRow key={elem.item.id}>
+<<<<<<< HEAD
                           <StyledTableCell align='center' component='th' scope='row'>
+=======
+                          <StyledTableCell  align='center'component='th' scope='row'>
+>>>>>>> 78750d39ea9338ad63851551a386e35bfbd17bbc
                               <img width="150" src={elem.item.image} />
                           </StyledTableCell>
                           <StyledTableCell align='center'>
                               {elem.item.title}
                           </StyledTableCell>
-                          <StyledTableCell align='left'>
+                          <StyledTableCell align='center'>
                             $  {elem.item.price}
                           </StyledTableCell>
                           <StyledTableCell align='center'>
