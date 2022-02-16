@@ -10,6 +10,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import { Link } from 'react-router-dom';
 import './ProductCard.css'
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
+import ProductStar from '../../ProductStar/ProductStar';
 
 export default function ProductCard({item}) {
     const {deleteProduct, addToCart, checkProductInCart, useAuth} = React.useContext(productContext)
@@ -67,11 +68,16 @@ export default function ProductCard({item}) {
               </Typography>
               ): null
             }
-              <Typography sx={{fontSize: '25px', paddingTop: '5px', color: 'black'}}>
+              <Typography sx={{fontSize: '25px', paddingTop: '5px', color: 'black',textAlign: 'center'}}>
                   $ {item.price}
               </Typography>  
             </Link>
-              {icons}
+            <div style={{display: 'flex', justifyContent: 'center', paddingBottom: '10px'}}>
+                {icons}
+              </div>
+              <div style={{display: 'flex', justifyContent: 'center', paddingBottom: '10px'}}>
+                <ProductStar/>
+              </div>
         </Card>
         </>     
   );

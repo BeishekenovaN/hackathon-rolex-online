@@ -11,6 +11,7 @@ import Home from './Components/Home/Home';
 import Payment from './Components/Payment/Payment';
 import ProductDetail from './Components/Product/ProductDetail/ProductDetail';
 import ProductList from './Components/Product/ProductList/ProductList';
+import ProductStar from './Components/ProductStar/ProductStar';
 import ProductsContextProvider from './Contexts/ProductsContext';
 
 
@@ -31,6 +32,7 @@ const MyRoutes = () => {
                     <Route path='/login' element={<Login/>} />
                     <Route path='/cosmograph' element={<Cosmograph/>}/>         
                     <Route path='/pay' element={<Payment/>} />
+                    <Route path='/star' element={<ProductStar/>} />
                 </Routes>
             </BrowserRouter>
         </ProductsContextProvider>
