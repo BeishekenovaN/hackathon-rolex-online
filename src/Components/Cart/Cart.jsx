@@ -56,7 +56,6 @@ export default function Cart() {
               <StyledTableCell align="center">Count</StyledTableCell>
               <StyledTableCell align="left">SubPrice</StyledTableCell>
               <StyledTableCell align="left"></StyledTableCell>
-
             </TableRow>
           </TableHead>
           <TableBody>
@@ -102,7 +101,6 @@ export default function Cart() {
                               </TableCell>
                           ) : (null)
                       }
-              
               </TableRow>
               <TableRow>
                   <TableCell colSpan={3} align='right'>
