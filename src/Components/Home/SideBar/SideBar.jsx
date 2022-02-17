@@ -54,7 +54,7 @@ const SideBar = () => {
     
     return (
         <Box sx={{ flexGrow: 1, display: 'flex', paddingTop: '10px'}}>
-            <Grid container spacing={2} sx={{display: 'flex', justifyContent: 'center', paddingTop: '50px', boxShadow: 'none'}}>
+            <Grid container spacing={1} sx={{display: 'flex', justifyContent: 'center', paddingTop: '50px', boxShadow: 'none', margin: '0 10px'}}>
                 <Grid>
                     <Paper sx={{boxShadow: 'none', display: 'flex', flexDirection: 'column'}}>
                         <FormControl component='fieldset'>
@@ -85,9 +85,9 @@ const SideBar = () => {
                             </RadioGroup>
                         </FormControl>
                         
-                        <Grid>
+                        <Grid sx={{display: 'flex', justifyContent: 'center'}}> 
                             <Slider sx={{color: 'black'}}
-                                onChange={(e) => filterProducts('price_lte', e.target.value)} valueLabelDisplay='auto' max={100000}
+                                onChange={(e) => filterProducts('price_lte', e.target.value)} valueLabelDisplay='auto' max={1000000}
                                 value={price}
                                 step={500}
                             />

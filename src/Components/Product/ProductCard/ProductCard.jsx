@@ -17,6 +17,7 @@ export default function ProductCard({item}) {
     const currentUser = useAuth()
 
 
+
     let icons = (
       <CardActions disableSpacing>
           {currentUser?.email === "admin1@gmail.com" ? (
@@ -49,6 +50,7 @@ export default function ProductCard({item}) {
           <Card sx={{ maxWidth: 306, minWidth: 306 }}>
             <Link to={`/detail/${item.id}`} style={{textDecoration: 'none', color: 'black'}}> 
               <CardMedia 
+                width='300px'
                 component="img"
                 image={item.image}
                 alt={item.title}

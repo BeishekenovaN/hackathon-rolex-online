@@ -12,7 +12,7 @@ const BackgroundVideo = () => {
               </div>
               <div className='introInfo'>
                 <div className='container'>
-                  <h1 className='intro__title'>COSMOGRAPH DAYTONA</h1>
+                  <h1 className='intro__title' style={{fontSize: '35px'}}>COSMOGRAPH DAYTONA</h1>
                   <h2 className='intro__title__two'>СОЗДАННЫЕ СПЕЦИАЛЬНО ДЛЯ ГОНОК</h2>
                 </div>
               </div>

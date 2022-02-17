@@ -14,6 +14,7 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { productContext } from '../../../Contexts/ProductsContext';
 import { useNavigate } from 'react-router-dom';
+import BackgroundDefault from '../../Image/BackgroundDefault/BackgroundDefault';
 
 
 
@@ -126,6 +127,7 @@ export default function Login() {
         </Box>
         <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
+      <BackgroundDefault/>
     </ThemeProvider>   
   );
 }

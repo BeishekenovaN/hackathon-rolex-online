@@ -116,7 +116,7 @@ export default function MyNavbar() {
         <Link to='/cart' style={{color: 'white'}}>
         <IconButton sx={{color: 'black'}} color="inherit">
             <Badge badgeContent={cartLength} color="secondary">
-                <ShoppingCartIcon />
+                <ShoppingCartIcon sx={{display: 'flex', justifyContent: 'center'}} />
             </Badge>
         </IconButton>
         </Link>
@@ -183,8 +183,8 @@ export default function MyNavbar() {
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
            <Link to='/cart'>
                 <IconButton>
-                    <Badge badgeContent={cartLength} color='secondary'>
-                        <ShoppingCartIcon sx={{color: 'white'}}/>
+                    <Badge badgeContent={cartLength} color='secondary' sx={{paddingTop: '10'}}>
+                        <ShoppingCartIcon sx={{color: 'white', marginLeft: '3',marginTop: '5px'}}/>
                     </Badge>
                 </IconButton>
            </Link>
@@ -196,8 +196,9 @@ export default function MyNavbar() {
               aria-haspopup="true"
               onClick={handleProfileMenuOpen}
               color="inherit"
+              
             >
-              <AccountCircle />
+              <AccountCircle sx={{marginTop:'3px'}} />
             </IconButton>
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
