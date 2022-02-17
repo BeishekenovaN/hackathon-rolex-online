@@ -1,7 +1,8 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useContext } from "react";
 import Cards from 'react-credit-cards'
 import "react-credit-cards/es/styles-compiled.css";
 import { Link } from "react-router-dom";
+import { productContext } from "../../Contexts/ProductsContext";
 import './Payment.css'
 
 export default function App() {
@@ -10,6 +11,8 @@ export default function App() {
   const [expiry, setExpiry] = useState("");
   const [cvc, setCvc] = useState("");
   const [focus, setFocus] = useState("");
+  const { cart, deleteCartPayment } = useContext(productContext)
+  console.log(cart, 'test')
 
   useEffect(() => {
     ref.current.focus();
@@ -66,7 +69,7 @@ export default function App() {
         </form>
           <Link to='/'>
             <div className="form-actions">
-                <button className="btn btn-primary btn-block">PAY</button>
+                <button className="btn btn-primary btn-block" onClick={() => deleteCartPayment()}>PAY</button>
             </div>
           </Link>
           <Link to='/cart'>

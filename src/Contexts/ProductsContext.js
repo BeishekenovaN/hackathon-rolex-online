@@ -35,6 +35,7 @@ const reducer = (state = INIT_STATE, action) => {
 }
 const ProductsContextProvider = ({children}) => {
     const [state, dispatch] = useReducer(reducer, INIT_STATE)
+
     // ! CREATE 
     const addProduct = async (newProduct) =>  {
         try {
@@ -192,7 +193,6 @@ const ProductsContextProvider = ({children}) => {
         );
         localStorage.setItem("cart", JSON.stringify(toDelete))
         getCart()
-        console.log(toDelete, 'carts')
         
         dispatch({
             type: "CHANGE_CART_COUNT",
@@ -211,6 +211,16 @@ const ProductsContextProvider = ({children}) => {
             payload: res.data
         }
         dispatch(action)
+    }
+
+    function deleteCartPayment(){
+        localStorage.clear()
+        let action = {
+            type: "CHANGE_CART_COUNT",
+            payload: 0
+        }
+        dispatch(action)
+        
     }
 
     //! Sign IN / sign up
@@ -253,6 +263,7 @@ const ProductsContextProvider = ({children}) => {
             logout,
             useAuth,
             deleteCartProduct,
+            deleteCartPayment,
             edit: state.edit,
             products: state.products,
             cartLength: state.cartLength,

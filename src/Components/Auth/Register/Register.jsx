@@ -14,6 +14,7 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
 import { productContext } from '../../../Contexts/ProductsContext';
+import BackgroundDefault from '../../Image/BackgroundDefault/BackgroundDefault';
 
 
 function Copyright(props) {
@@ -146,6 +147,7 @@ export default function Register() {
         </Box>
         <Copyright sx={{ mt: 5 }} />
       </Container>
+      <BackgroundDefault/> 
     </ThemeProvider>
   );
 }
